@@ -3,6 +3,7 @@ import os
 
 from dotenv import load_dotenv
 
+
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 dotenv_path = join(BASE_DIR, '.env')
@@ -27,7 +28,9 @@ THIRD_APPS = [
 ]
 
 LOCAL_APPS = [
-
+    'apps.rest_auth',
+    'apps.products',
+    'apps.common',
 ]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_APPS + LOCAL_APPS
