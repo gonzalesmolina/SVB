@@ -54,13 +54,13 @@
           </nav>
 
           <div class="container-fluid contenido">
-            <div class="row flex-wrap">
-                    <div class="col-md-3 ">
+            <div class="row ">
+                    <div class="col-md-3 catergorias">
                         <div id="list-example" class="list-group mx-auto">
                             <a class="list-group-item list-group-item-action  cabecera-categoria" href="#list-item-1">Nuestras categorias</a>
                             <a class="list-group-item list-group-item-action" href="#list-item-1">Verduras</a>
                             <a class="list-group-item list-group-item-action " href="#list-item-2">Bebidas</a>
-                            <a class="list-group-item list-group-item-action" href="#list-item-3">Abarrotes</a>
+                            <a class="list-group-item list-group-item-action activo" href="#list-item-3">Abarrotes</a>
                             <a class="list-group-item list-group-item-action" href="#list-item-4">Golosinas</a>
                             <a class="list-group-item list-group-item-action" href="#list-item-4">Limpieza</a>
                             <a class="list-group-item list-group-item-action" href="#list-item-4">Otros</a>
@@ -76,8 +76,8 @@
                             </ul>
                           </div> -->
                     </div>
-                    <div class="col-md-9">
-                      <div class="row ">
+                    <div class="col-md-9 ">
+                      <div class="row d-flex flex-row justify-content-center">
                           
                         <div class="card" style="width: 14rem;">
                             <img src="https://via.placeholder.com/400x250" class="card-img-top" alt="...">
@@ -200,6 +200,11 @@
 </body>
 
 <style>
+  .activo{
+     background: #f87c73;
+     color: white;
+;
+  }
 .list-group{
     width: 200px;
 }
@@ -233,6 +238,12 @@
 }
 .carrito{
     cursor: pointer;
+}
+@media (min-width: 0) and (max-width: 768px) {
+    /* Solo se aplicarán entre los tamaños indicados */
+    .catergorias{
+      display: none;
+    }
 }
 </style>
 </html>
