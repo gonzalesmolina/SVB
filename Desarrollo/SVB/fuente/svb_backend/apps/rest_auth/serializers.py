@@ -1,5 +1,6 @@
 from django.contrib.auth import get_user_model
 from rest_framework import serializers
+from apps.rest_auth.models import UserProfile
 
 
 User = get_user_model()
@@ -33,3 +34,9 @@ class UserSerializer(serializers.ModelSerializer):
         instance.email = validated_data.get('email', instance.email)
         instance.save()
         return instance
+
+class UserProfileSerializer(serializers.ModelSerializer):
+    
+    class Meta:
+        model  = UserProfile
+        fields = '__all__'

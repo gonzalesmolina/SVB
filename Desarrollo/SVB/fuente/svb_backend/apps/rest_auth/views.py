@@ -5,10 +5,16 @@ from rest_framework.authtoken.models import Token
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.response import Response
+from rest_framework.generics import (
+    ListCreateAPIView,
+    RetrieveUpdateDestroyAPIView
+)
 
 from apps.common.utils import STATUS_MAP
 from apps.common.utils import send_error
-from apps.rest_auth.serializers import UserSerializer
+from apps.rest_auth.serializers import UserSerializer, UserProfileSerializer
+from apps.common.utils import DefaultPagination
+from apps.rest_auth.models import UserProfile
 
 
 @csrf_exempt
@@ -66,3 +72,16 @@ def logout(request):
     """
     request.user.auth_token.delete()
     return Response(status=STATUS_MAP[204])
+
+
+class UserProfileListView(ListCreateAPIView):
+    queryset = UserProfile.objects.all()
+    serializer_class = UserProfileSerializer
+    permission_classes = [AllowAny]
+    pagination_class = DefaultPagination
+
+
+class UserProfileDetailView(RetrieveUpdateDestroyAPIView):
+    queryset = UserProfile.objects.all()
+    serializer_class = UserProfileSerializer
+    permission_classes = [AllowAny]
