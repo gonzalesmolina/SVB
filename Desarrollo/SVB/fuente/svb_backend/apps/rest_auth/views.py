@@ -3,18 +3,18 @@ from django.views.decorators.csrf import csrf_exempt
 from drf_yasg.utils import swagger_auto_schema
 from rest_framework.authtoken.models import Token
 from rest_framework.decorators import api_view, permission_classes
-from rest_framework.permissions import AllowAny, IsAuthenticated
-from rest_framework.response import Response
 from rest_framework.generics import (
     ListCreateAPIView,
     RetrieveUpdateDestroyAPIView
 )
+from rest_framework.permissions import AllowAny, IsAuthenticated
+from rest_framework.response import Response
 
+from apps.common.utils import DefaultPagination
 from apps.common.utils import STATUS_MAP
 from apps.common.utils import send_error
-from apps.rest_auth.serializers import UserSerializer, UserProfileSerializer
-from apps.common.utils import DefaultPagination
 from apps.rest_auth.models import UserProfile
+from apps.rest_auth.serializers import UserSerializer, UserProfileSerializer
 
 
 @csrf_exempt

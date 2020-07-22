@@ -18,8 +18,9 @@ class Address(models.Model):
     )
 
     user = models.ForeignKey(
-        User,
-        on_delete=models.CASCADE
+        'UserProfile',
+        on_delete=models.CASCADE,
+        related_name='addresses'
     )
     address_type = models.CharField(
         max_length=1,
@@ -59,12 +60,6 @@ class UserProfile(Person):
         User,
         on_delete=models.CASCADE,
         primary_key=True
-    )
-    billing_address = models.ForeignKey(
-        Address,
-        on_delete=models.CASCADE,
-        blank=True,
-        null=True
     )
 
     def __str__(self):
