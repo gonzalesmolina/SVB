@@ -35,5 +35,5 @@ urlpatterns = [
     re_path(r'admin/', admin.site.urls),
     path('auth/', include('apps.rest_auth.urls')),
     path('api/products/', include('apps.products.urls')),
-    #     path('api/orders/', include('apps.orders.urls'))
+    path('api/orders/', include('apps.orders.urls'))
 ]
