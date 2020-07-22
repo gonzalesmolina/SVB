@@ -147,16 +147,16 @@ class Ubigeo(models.Model):
     )
     department = models.CharField(
         _('Department'),
-        max_length=30,
+        max_length=64,
         help_text=_('Departamento')
     )
     province = models.CharField(
         _('Province'),
-        max_length=30
+        max_length=64
     )
     district = models.CharField(
         _('District'),
-        max_length=30,
+        max_length=64,
         help_text=_('Distrito')
     )
 
