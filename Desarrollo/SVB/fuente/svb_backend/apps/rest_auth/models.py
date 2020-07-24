@@ -7,6 +7,17 @@ from apps.common.models import Person, Ubigeo
 User = get_user_model()
 
 
+class UserProfile(Person):
+    user = models.OneToOneField(
+        User,
+        on_delete=models.CASCADE,
+        primary_key=True
+    )
+
+    def __str__(self):
+        return self.user.username
+
+
 class Address(models.Model):
     HOME = 1
     OFFICE = 2
@@ -18,7 +29,7 @@ class Address(models.Model):
     )
 
     user = models.ForeignKey(
-        'UserProfile',
+        UserProfile,
         on_delete=models.CASCADE,
         related_name='addresses'
     )
@@ -49,18 +60,7 @@ class Address(models.Model):
     )
 
     def __str__(self):
-        return self.user.username
+        return self.user.user.username
 
     class Meta:
         verbose_name_plural = 'Addresses'
-
-
-class UserProfile(Person):
-    user = models.OneToOneField(
-        User,
-        on_delete=models.CASCADE,
-        primary_key=True
-    )
-
-    def __str__(self):
-        return self.user.username

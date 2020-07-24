@@ -3,7 +3,6 @@ from django.contrib.auth import get_user_model
 from django.db import models
 from django.utils import timezone
 from django.utils.translation import gettext_lazy as _
-from softdelete.models import SoftDeleteModel
 
 
 User = get_user_model()
@@ -35,7 +34,7 @@ class OwnedModel(models.Model):
         abstract = True
 
 
-class Person(TimeStampedModel, SoftDeleteModel):
+class Person(TimeStampedModel):
     """
     Modelo abstracto que encapsula toda la información de una persona.
     """
