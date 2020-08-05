@@ -5,6 +5,7 @@ from apps.suppliers.views import (
     SupplierListView
 )
 
+
 urlpatterns = [
     path('suppliers', SupplierListView.as_view(), name='suppliers-list'),
     path('suppliers/<int:pk>', SupplierDetailView.as_view(),

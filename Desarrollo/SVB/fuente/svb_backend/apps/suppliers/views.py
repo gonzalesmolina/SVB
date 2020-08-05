@@ -8,6 +8,7 @@ from apps.common.utils import DefaultPagination
 from apps.suppliers.models import Supplier
 from apps.suppliers.serializers import SupplierSerializer
 
+
 class SupplierListView(ListCreateAPIView):
     queryset = Supplier.objects.all()
     serializer_class = SupplierSerializer
