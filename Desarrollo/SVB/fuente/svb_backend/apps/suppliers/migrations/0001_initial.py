@@ -14,16 +14,23 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Supplier',
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('id', models.AutoField(auto_created=True,
+                                        primary_key=True, serialize=False, verbose_name='ID')),
                 ('created_at', models.DateTimeField(auto_now_add=True)),
                 ('modified_at', models.DateTimeField(auto_now=True)),
-                ('ruc', models.CharField(max_length=11, unique=True, verbose_name='RUC')),
+                ('ruc', models.CharField(max_length=11,
+                                         unique=True, verbose_name='RUC')),
                 ('name', models.CharField(max_length=128, verbose_name='Razón Social')),
-                ('office_phone_number', models.CharField(blank=True, max_length=15, null=True, verbose_name='Teléfono de oficina')),
-                ('mobile_phone_number', models.CharField(blank=True, max_length=15, null=True, verbose_name='Celular')),
-                ('address', models.CharField(blank=True, max_length=15, null=True, verbose_name='Dirección')),
-                ('category', models.CharField(blank=True, max_length=128, null=True, verbose_name='Categoría')),
-                ('is_active', models.BooleanField(default=True, verbose_name='Activo')),
+                ('office_phone_number', models.CharField(
+                    blank=True, max_length=15, null=True, verbose_name='Teléfono de oficina')),
+                ('mobile_phone_number', models.CharField(blank=True,
+                                                         max_length=15, null=True, verbose_name='Celular')),
+                ('address', models.CharField(blank=True,
+                                             max_length=15, null=True, verbose_name='Dirección')),
+                ('category', models.CharField(blank=True,
+                                              max_length=128, null=True, verbose_name='Categoría')),
+                ('is_active', models.BooleanField(
+                    default=True, verbose_name='Activo')),
             ],
             options={
                 'verbose_name': 'Proveedor',

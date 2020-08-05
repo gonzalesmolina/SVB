@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils.translation import gettext_lazy as _
+
 from apps.common.models import TimeStampedModel
 
 
@@ -28,7 +29,7 @@ class Supplier(TimeStampedModel):
     )
     address = models.CharField(
         _('Dirección'),
-        max_length=15,
+        max_length=128,
         blank=True,
         null=True
     )
