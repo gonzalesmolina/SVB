@@ -8,12 +8,16 @@ from rest_framework.views import APIView
 from apps.common.utils import DefaultPagination
 from apps.orders.models import (
     Order,
-    OrderItem
+    OrderItem,
+    Payment
 )
 from apps.orders.serializers import (
     OrderSerializer,
+    PaymentSerializer
 )
 from apps.products.models import Product
+from apps.rest_auth.models import Address, UserProfile
+from apps.rest_auth.serializers import AddressSerializer
 
 
 class OrderListView(ListAPIView):
@@ -23,12 +27,55 @@ class OrderListView(ListAPIView):
 
 
 class OrderApiView(APIView):
-    def get(self, *args, **kwargs):
-        pass
+    def get(self, request, *args, **kwargs):
+        order = get_object_or_404(Order, user=request.user, ordered=False)
+        profile = get_object_or_404(UserProfile, user=request.user)
+        addresses = Address.objects.filter(user=profile)
+        serializer = OrderSerializer(order)
+        ad_serializer = AddressSerializer(addresses, many=True)
+        payload = {
+            'order': serializer.data,
+            'addresses': ad_serializer.data
+        }
+        return Response(payload)
+
+    def post(self, request, *args, **kwargs):
+        address_id = self.request.data.get('address')
+        profile = get_object_or_404(UserProfile, user=request.user)
+        addresses = profile.addresses.all()
+        addresses.update(default=False)
+        address = addresses.get(id=address_id)
+        address.default = True
+        address.save()
+        serializer = AddressSerializer(addresses, many=True)
+        return Response(serializer.data)
 
 
 class PaymentApiView(APIView):
-    pass
+    def get(self, request, *args, **kwargs):
+        order = get_object_or_404(Order, user=request.user, ordered=False)
+        serializer = PaymentSerializer(order.payment)
+        return Response(serializer.data)
+
+    def post(self, request, *args, **kwargs):
+        order = get_object_or_404(Order, user=request.user, ordered=False)
+        data = request.data
+        payment = Payment()
+        payment.user = request.user
+        payment.payment_method = data.get('payment_method')
+        payment.amount = order.get_total()
+        payment.save()
+
+        order_items = order.items.all()
+        order_items.update(ordered=True)
+        for item in order_items:
+            item.save()
+        order.ordered = True
+        order.payment = payment
+        order.save()
+
+        serializer = PaymentSerializer(payment)
+        return Response(serializer.data)
 
 
 @api_view(["POST"])

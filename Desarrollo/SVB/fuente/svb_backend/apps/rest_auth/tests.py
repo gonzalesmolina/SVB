@@ -1,7 +1,10 @@
-from django.test import TestCase
 from django.contrib.auth.models import User
-from .models import UserProfile, Address
+from django.test import TestCase
+
 from apps.common.models import Ubigeo, Person
+
+from .models import UserProfile, Address
+
 
 class RestAuthTests(TestCase):
 
@@ -12,10 +15,10 @@ class RestAuthTests(TestCase):
             username='mockuser', password='abc123'
         )
         mock_user.save()
-        
+
         # Create Ubigeo
         mock_ubigeo = Ubigeo.objects.create(
-            code ='150732',
+            code='150732',
             department='Lima',
             province='Lima',
             district='Surco',

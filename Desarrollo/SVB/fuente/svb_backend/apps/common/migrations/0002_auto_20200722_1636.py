@@ -13,12 +13,14 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='ubigeo',
             name='department',
-            field=models.CharField(help_text='Departamento', max_length=64, verbose_name='Department'),
+            field=models.CharField(
+                help_text='Departamento', max_length=64, verbose_name='Department'),
         ),
         migrations.AlterField(
             model_name='ubigeo',
             name='district',
-            field=models.CharField(help_text='Distrito', max_length=64, verbose_name='District'),
+            field=models.CharField(help_text='Distrito',
+                                   max_length=64, verbose_name='District'),
         ),
         migrations.AlterField(
             model_name='ubigeo',
