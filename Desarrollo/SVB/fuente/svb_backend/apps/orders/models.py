@@ -8,6 +8,55 @@ from apps.products.models import Product
 User = get_user_model()
 
 
+class Payment(TimeStampedModel):
+    CASH = 0
+    DEBIT_CARD = 1
+    CREDIT_CARD = 2
+    YAPE = 3
+    PAYMENT_METHOD_CHOICES = (
+        (CASH, 'Efectivo'),
+        (DEBIT_CARD, 'Tarjeta de débito'),
+        (CREDIT_CARD, 'Tarjeta de crédito'),
+        (YAPE, 'App YAPE')
+    )
+
+    user = models.ForeignKey(
+        User,
+        on_delete=models.SET_NULL,
+        blank=True,
+        null=True
+    )
+    payment_method = models.PositiveSmallIntegerField(
+        choices=PAYMENT_METHOD_CHOICES,
+        default=CASH
+    )
+    amount = models.FloatField()
+
+    class Meta:
+        verbose_name = 'Pago'
+        verbose_name_plural = 'Pagos'
+
+    def __str__(self):
+        return self.user.username
+
+
+class Coupon(TimeStampedModel):
+    code = models.CharField(
+        max_length=16
+    )
+    is_active = models.BooleanField(
+        default=True
+    )
+    amount = models.FloatField()
+
+    class Meta:
+        verbose_name = 'Cupón'
+        verbose_name_plural = 'Cupones'
+
+    def __str__(self):
+        return self.code
+
+
 class OrderItem(TimeStampedModel):
     user = models.ForeignKey(
         User,
@@ -63,13 +112,13 @@ class Order(TimeStampedModel):
         default=False
     )
     payment = models.ForeignKey(
-        'Payment',
+        Payment,
         on_delete=models.SET_NULL,
         blank=True,
         null=True
     )
     coupon = models.ForeignKey(
-        'Coupon',
+        Coupon,
         on_delete=models.SET_NULL,
         blank=True,
         null=True
@@ -94,53 +143,6 @@ class Order(TimeStampedModel):
         if self.coupon:
             total -= self.coupon.amount
         return total
-
-
-class Payment(TimeStampedModel):
-    CASH = 0
-    DEBIT_CARD = 1
-    CREDIT_CARD = 2
-    PAYMENT_METHOD_CHOICES = (
-        (CASH, 'Efectivo'),
-        (DEBIT_CARD, 'Tarjeta de débito'),
-        (CREDIT_CARD, 'Tarjeta de crédito')
-    )
-
-    user = models.ForeignKey(
-        User,
-        on_delete=models.SET_NULL,
-        blank=True,
-        null=True
-    )
-    payment_method = models.PositiveSmallIntegerField(
-        choices=PAYMENT_METHOD_CHOICES,
-        default=CASH
-    )
-    amount = models.FloatField()
-
-    class Meta:
-        verbose_name = 'Pago'
-        verbose_name_plural = 'Pagos'
-
-    def __str__(self):
-        return self.user.username
-
-
-class Coupon(TimeStampedModel):
-    code = models.CharField(
-        max_length=16
-    )
-    is_active = models.BooleanField(
-        default=True
-    )
-    amount = models.FloatField()
-
-    class Meta:
-        verbose_name = 'Cupón'
-        verbose_name_plural = 'Cupones'
-
-    def __str__(self):
-        return self.code
 
 
 class Refund(models.Model):

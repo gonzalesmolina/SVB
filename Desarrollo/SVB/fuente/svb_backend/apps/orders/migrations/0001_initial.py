@@ -18,7 +18,8 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Coupon',
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('id', models.AutoField(auto_created=True,
+                                        primary_key=True, serialize=False, verbose_name='ID')),
                 ('created_at', models.DateTimeField(auto_now_add=True)),
                 ('modified_at', models.DateTimeField(auto_now=True)),
                 ('code', models.CharField(max_length=16)),
@@ -33,7 +34,8 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Order',
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('id', models.AutoField(auto_created=True,
+                                        primary_key=True, serialize=False, verbose_name='ID')),
                 ('created_at', models.DateTimeField(auto_now_add=True)),
                 ('modified_at', models.DateTimeField(auto_now=True)),
                 ('number', models.CharField(blank=True, max_length=12, null=True)),
@@ -41,7 +43,8 @@ class Migration(migrations.Migration):
                 ('received', models.BooleanField(default=False)),
                 ('refund_requested', models.BooleanField(default=False)),
                 ('refund_granted', models.BooleanField(default=False)),
-                ('coupon', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.SET_NULL, to='orders.Coupon')),
+                ('coupon', models.ForeignKey(blank=True, null=True,
+                                             on_delete=django.db.models.deletion.SET_NULL, to='orders.Coupon')),
             ],
             options={
                 'verbose_name': 'Órden de compra',
@@ -51,11 +54,13 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Refund',
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('id', models.AutoField(auto_created=True,
+                                        primary_key=True, serialize=False, verbose_name='ID')),
                 ('reason', models.TextField()),
                 ('accepted', models.BooleanField(default=False)),
                 ('email', models.EmailField(max_length=254)),
-                ('order', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='orders.Order')),
+                ('order', models.ForeignKey(
+                    on_delete=django.db.models.deletion.CASCADE, to='orders.Order')),
             ],
             options={
                 'verbose_name': 'Devolución',
@@ -65,12 +70,15 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Payment',
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('id', models.AutoField(auto_created=True,
+                                        primary_key=True, serialize=False, verbose_name='ID')),
                 ('created_at', models.DateTimeField(auto_now_add=True)),
                 ('modified_at', models.DateTimeField(auto_now=True)),
-                ('payment_method', models.PositiveSmallIntegerField(choices=[(0, 'Efectivo'), (1, 'Tarjeta de débito'), (2, 'Tarjeta de crédito')], default=0)),
+                ('payment_method', models.PositiveSmallIntegerField(choices=[
+                 (0, 'Efectivo'), (1, 'Tarjeta de débito'), (2, 'Tarjeta de crédito')], default=0)),
                 ('amount', models.FloatField()),
-                ('user', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.SET_NULL, to=settings.AUTH_USER_MODEL)),
+                ('user', models.ForeignKey(blank=True, null=True,
+                                           on_delete=django.db.models.deletion.SET_NULL, to=settings.AUTH_USER_MODEL)),
             ],
             options={
                 'verbose_name': 'Pago',
@@ -80,13 +88,16 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='OrderItem',
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('id', models.AutoField(auto_created=True,
+                                        primary_key=True, serialize=False, verbose_name='ID')),
                 ('created_at', models.DateTimeField(auto_now_add=True)),
                 ('modified_at', models.DateTimeField(auto_now=True)),
                 ('ordered', models.BooleanField(default=False)),
                 ('quantity', models.PositiveSmallIntegerField(default=1)),
-                ('item', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='products.Product')),
-                ('user', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
+                ('item', models.ForeignKey(
+                    on_delete=django.db.models.deletion.CASCADE, to='products.Product')),
+                ('user', models.ForeignKey(
+                    on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
             ],
             options={
                 'abstract': False,
@@ -100,11 +111,13 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='order',
             name='payment',
-            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.SET_NULL, to='orders.Payment'),
+            field=models.ForeignKey(
+                blank=True, null=True, on_delete=django.db.models.deletion.SET_NULL, to='orders.Payment'),
         ),
         migrations.AddField(
             model_name='order',
             name='user',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL),
+            field=models.ForeignKey(
+                on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL),
         ),
     ]
