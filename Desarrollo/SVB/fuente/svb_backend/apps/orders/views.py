@@ -63,6 +63,7 @@ class PaymentApiView(APIView):
         payment = Payment()
         payment.user = request.user
         payment.payment_method = data.get('payment_method')
+        payment.operation_number = data.get('operation_number')
         payment.amount = order.get_total()
         payment.save()
 
