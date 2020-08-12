@@ -31,6 +31,11 @@ class Payment(TimeStampedModel):
         default=CASH
     )
     amount = models.FloatField()
+    operation_number = models.CharField(
+        max_length=32,
+        blank=True,
+        null=True
+    )
 
     class Meta:
         verbose_name = 'Pago'
