@@ -18,6 +18,7 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='payment',
             name='payment_method',
-            field=models.PositiveSmallIntegerField(choices=[(0, 'Efectivo'), (1, 'Tarjeta de débito'), (2, 'Tarjeta de crédito'), (3, 'App YAPE')], default=0),
+            field=models.PositiveSmallIntegerField(choices=[(0, 'Efectivo'), (
+                1, 'Tarjeta de débito'), (2, 'Tarjeta de crédito'), (3, 'App YAPE')], default=0),
         ),
     ]

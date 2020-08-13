@@ -25,6 +25,7 @@ THIRD_APPS = [
     'softdelete',
     'drf_yasg',
     'django_extensions',
+    'django_filters',
 ]
 
 LOCAL_APPS = [
@@ -33,6 +34,7 @@ LOCAL_APPS = [
     'apps.common',
     'apps.orders',
     'apps.suppliers',
+    'apps.reports',
 ]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_APPS + LOCAL_APPS
