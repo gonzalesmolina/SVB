@@ -119,6 +119,7 @@ class Order(TimeStampedModel):
     payment = models.ForeignKey(
         Payment,
         on_delete=models.SET_NULL,
+        related_name='order',
         blank=True,
         null=True
     )
