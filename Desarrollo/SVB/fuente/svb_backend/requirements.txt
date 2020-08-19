@@ -11,7 +11,6 @@ Django==3.0.7
 django-cors-headers==3.4.0
 django-crispy-forms==1.9.1
 django-extensions==3.0.2
-django-filters==0.2.1
 djangorestframework==3.11.0
 drf-yasg==1.17.1
 idna==2.9
