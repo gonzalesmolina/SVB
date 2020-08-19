@@ -13,7 +13,7 @@ class Category(TimeStampedModel):
     class Meta:
         ordering = ('name',)
         verbose_name = 'Categoría'
-        verbose_name_plural = ('Categorías')
+        verbose_name_plural = 'Categorías'
 
     def __str__(self):
         return self.name
