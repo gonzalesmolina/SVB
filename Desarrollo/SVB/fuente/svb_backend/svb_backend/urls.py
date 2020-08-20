@@ -1,3 +1,5 @@
+from django.conf import settings
+from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, re_path, include
 from drf_yasg import openapi
@@ -38,4 +40,4 @@ urlpatterns = [
     path('api/orders/', include('apps.orders.urls')),
     path('api/suppliers/', include('apps.suppliers.urls')),
     path('api/reports/', include('apps.reports.urls')),
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
