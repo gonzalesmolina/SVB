@@ -7,8 +7,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 
 
-  const url="http://localhost:3000/proveedores"; //api fake
- //const url="http://13.65.190.213:8000/api/suppliers/suppliers"; //api real
+  //const url="http://localhost:3000/proveedores"; //api fake
+ const url="http://13.65.190.213:8000/api/suppliers/suppliers"; //api real
 
 export default function Proveedor() {
     const [proveedor, setProveedor]=useState([]);
@@ -31,8 +31,8 @@ export default function Proveedor() {
         const res = await fetch(url);
         const data= await res.json();
      //   console.table("datos",data)
-       // setProveedor(data.results); //es para api real
-       setProveedor(data) //de mi api fake json server 
+        setProveedor(data.results); //es para api real
+      // setProveedor(data) //de mi api fake json server 
     }
 
     const postProveedores= async()=>{

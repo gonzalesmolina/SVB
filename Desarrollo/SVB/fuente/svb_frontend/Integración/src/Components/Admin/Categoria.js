@@ -7,8 +7,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 
 
- const url="http://localhost:3000/categorias";
-//const url="http://13.65.190.213:8000/api/products/categories" //api real
+ //const url="http://localhost:3000/categorias"; //api fake
+const url="http://13.65.190.213:8000/api/products/categories" //api real
 
 export default function Categoria() {
 
@@ -29,8 +29,8 @@ export default function Categoria() {
         const res = await fetch(url);
         const data= await res.json();
      //   console.table("datos",data)
-       // setCateg(data.results); //es para el url verdadero
-       setCateg(data) //de mi api fake json server
+        setCateg(data.results); //es para el url verdadero
+      // setCateg(data) //de mi api fake json server
     }
 
     const postCategorias= async()=>{

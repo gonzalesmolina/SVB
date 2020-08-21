@@ -5,7 +5,7 @@ export default function NavBarBodega() {
     return (
       
     <nav className="navbar navbar-expand-lg navbar-light " >
-         <Link to="/categorias">   <a className="navbar-brand ml-3 font-weight-bold" href>BODEGA.pe</a> </Link>
+         <Link to="/categorias" className="navbar-brand ml-3 font-weight-bold">   BODEGA.pe </Link>
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span className="navbar-toggler-icon"></span>
             </button>

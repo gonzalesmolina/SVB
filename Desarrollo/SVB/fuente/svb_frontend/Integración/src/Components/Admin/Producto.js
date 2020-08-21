@@ -5,11 +5,11 @@ import "bootstrap/dist/css/bootstrap.min.css";
  import NavegacionLateral from './NavegacionLateral';
  import NavBar from './NavBar';
 
- //const url="http://13.65.190.213:8000/api/products/products"; //api real
- const url="http://localhost:3000/products"; //api fake
+ const url="http://13.65.190.213:8000/api/products/products"; //api real
+ //const url="http://localhost:3000/products"; //api fake
 
- //const urlCtg="http://13.65.190.213:8000/api/products/categories"; //api real
- const urlCtg="http://localhost:3000/categorias"; //api fake
+ const urlCtg="http://13.65.190.213:8000/api/products/categories"; //api real
+ //const urlCtg="http://localhost:3000/categorias"; //api fake
 
 export default function Producto() {
 
@@ -34,9 +34,9 @@ export default function Producto() {
       
       const res = await fetch(urlCtg);
       const data= await res.json();
-   //   console.table("datos",data)
-     // setCatg(data.results); //es para el url verdadero
-     setCatg(data) //de mi api fake json server
+   
+      setCatg(data.results); //es para el url verdadero
+    // setCatg(data) //de mi api fake json server
     // console.table("categ en Component Productos:",data.results)
   }
 
@@ -45,9 +45,9 @@ export default function Producto() {
         const res = await fetch(url);
         const data= await res.json();
      //   console.table("datos",data)
-       // setProductos(data.results); //es para el url verdadero
-       setProductos(data) //de mi api fake json server
-      // console.table("productos:",data.results)
+        setProductos(data.results); //es para el url verdadero
+      // setProductos(data) //de mi api fake json server
+      
     }
 
     const postProductos= async()=>{
