@@ -25,11 +25,32 @@ class OrderSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Order
-        fields = '__all__'
+        fields = (
+            'id',
+            'items',
+            'number',
+            'ordered',
+            'received',
+            'refund_requested',
+            'refund_granted',
+            'user',
+            'payment',
+            'coupon',
+            'created_at',
+            'modified_at'
+        )
 
 
 class PaymentSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Payment
-        fields = '__all__'
+        fields = (
+            'id',
+            'payment_method',
+            'amount',
+            'operation_number',
+            'user',
+            'created_at',
+            'modified_at'
+        )
