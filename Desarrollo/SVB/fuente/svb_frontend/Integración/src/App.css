@@ -1,0 +1,114 @@
+/* .App {
+   text-align: center; 
+} */
+
+/* estilos de la categoria */
+.list-group{
+  margin-top: 4em;
+  width: 160px;
+}
+
+  /* .contenedor{
+      margin: 0;
+  } */
+  form{
+      margin: 1em;
+  }
+  .row{
+      /* padding-top: 2em; */
+      padding: 2em 2em 0 2em;
+  }
+  .table{
+      margin-top: 1.5em;
+  }
+td>i{
+  cursor: pointer;
+}
+  body{
+      /* padding-bottom: 5em; */
+     height: 100vh;
+  }
+
+.home{
+  color: white !important; 
+}
+::-webkit-input-placeholder{ 
+color:rgb(195, 194, 194) !important; 
+;
+}
+::-moz-input-placeholder{ 
+color:rgb(195, 194, 194) !important;
+}
+form .title{
+font-size: 1.7em;
+}
+#loguito{
+ margin-left: 2em;
+}
+#dropDown{
+  margin-right: 3em;
+}
+form label{
+font-size: 14px;
+font-weight: 500;
+
+color: #282c34;
+}
+
+
+@media (min-width: 0) and (max-width: 768px) {
+  /* Solo se aplicarán entre los tamaños indicados */
+  .side-nav{
+    display: none;
+  }
+ 
+}
+/* fin categoria */
+
+
+
+/* Componente NavBarBodega */
+.buscador{
+  margin-right: 16px;
+}
+.registro{
+  color: grey;
+  font-weight: bold;
+  margin: 1em;
+  cursor: pointer;
+}
+.carrito{
+  cursor: pointer;
+}
+/* fin NavBarBodega */
+
+/* componente Home */
+
+.btn-product{
+  background-color: rgb(255, 64, 64) !important;
+  color:white !important;
+  font-weight: bold !important;
+}
+.contenido{
+  padding-top: 40px;
+  background: #F6F6F6;
+ 
+  height: 100vh;
+}
+
+
+.card{
+  margin: 1.5rem;
+}
+
+
+.btn-product:hover{
+  /* color:white; */
+  background: #ff3c2e !important;
+}
+/* fin Home */
+
+/* componente Mantenimiento Producto Admin */
+#img-icon{
+  width: 50px;
+}
