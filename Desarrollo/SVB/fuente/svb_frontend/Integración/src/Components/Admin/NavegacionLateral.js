@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 
 export default function NavegacionLateral() {
@@ -7,13 +7,14 @@ export default function NavegacionLateral() {
      
         <div id="list-example" className="list-group mx-auto ">
           
-          <a className="list-group-item list-group-item-action " href="Pedidos.html">Pedidos</a>
-        
-        <Link to="/productos">  <a className="list-group-item list-group-item-action" href="CatalogoProductos.html">Productos</a> </Link>
-
-        <Link to="/categorias">  <a className="list-group-item list-group-item-action active " href>Categorias</a> </Link> 
          
-        <Link to="/proveedores"> <a className="list-group-item list-group-item-action" href>Proveedores</a> </Link>
+          <NavLink to="/ordenes" className="list-group-item list-group-item-action" activeClassName="active">Pedidos</NavLink>
+        
+        <NavLink to="/productos" className="list-group-item list-group-item-action" activeClassName="active">  Productos </NavLink>
+
+        <NavLink to="/categorias" className="list-group-item list-group-item-action " activeClassName="active">  Categorias </NavLink> 
+         
+        <NavLink to="/proveedores" className="list-group-item list-group-item-action" activeClassName="active"> Proveedores</NavLink>
 
         </div>
       
