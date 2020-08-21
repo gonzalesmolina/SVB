@@ -3,8 +3,8 @@ import NavBarBodega from './NavBarBodega'
 import CardCategoria from './CardCategoria'
 
 
-const url="http://localhost:3000/categorias";  //api fake
-//const url="http://13.65.190.213:8000/api/products/categories" //api real
+//const url="http://localhost:3000/categorias";  //api fake
+const url="http://13.65.190.213:8000/api/products/categories" //api real
 
 export default function Home() {
 
@@ -15,8 +15,8 @@ export default function Home() {
         const res = await fetch(url);
         const data= await res.json();
        //console.table("datos",data);
-     //  setCategoria(data.results); //es para el url verdadero
-       setCategoria(data) //de mi api fake json server
+     setCategoria(data.results); // url verdadero
+       //setCategoria(data) // api fake json server
     }
     useEffect(() => {
  
