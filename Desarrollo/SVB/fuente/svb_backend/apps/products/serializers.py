@@ -35,3 +35,22 @@ class ProductSerializer(serializers.ModelSerializer):
             'created_at',
             'modified_at'
         )
+
+
+class ProductListSerializer(serializers.ModelSerializer):
+    category = serializers.SlugRelatedField(slug_field='name', read_only=True)
+
+    class Meta:
+        model = Product
+        fields = (
+            'id',
+            'name',
+            'slug',
+            'description',
+            'image',
+            'price',
+            'discount',
+            'is_active',
+            'category'
+        )
+
