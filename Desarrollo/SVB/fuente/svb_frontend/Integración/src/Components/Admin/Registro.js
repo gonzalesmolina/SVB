@@ -10,7 +10,7 @@ import NavBar from './NavBar'
 
 
 //const url="http://localhost:3000/categorias"; //api fake
-const url = "http://13.65.190.213:8000/api/auth/login" //api real
+const url = "http://13.65.190.213:8000/api/auth/register" //api real
 
 export default function Login() {
 
