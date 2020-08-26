@@ -28,8 +28,6 @@ export default function Registro() {
 
       console.log(formu)
 
-      history.push('/login')
-
       const res = await fetch(url, {
         method: 'POST',
         body: JSON.stringify(formu),
@@ -40,6 +38,8 @@ export default function Registro() {
       })
       const formatoJson = await res.json();
       console.log(formatoJson);
+
+      history.push('/login')
       // setIsRedirect(true)
       /* getCategorias();
       ModalInsertar(); */
