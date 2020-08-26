@@ -5,6 +5,7 @@ import Categoria from './Components/Admin/Categoria';
 import Proveedor from './Components/Admin/Proveedor';
 import Producto from './Components/Admin/Producto';
 import Login from './Components/Admin/Login';
+import Registro from './Components/Admin/Registro';
 
  const Routes=()=> {
     return (
@@ -12,6 +13,7 @@ import Login from './Components/Admin/Login';
            <Route exact path="/" component={Home}   />
            <Route path="/categorias" component={Categoria} />
            <Route path="/login" component={Login} />
+           <Route path="/registro" component={Registro} />
            <Route path="/proveedores" component={Proveedor} />
            <Route path="/productos" component={Producto} />
 
