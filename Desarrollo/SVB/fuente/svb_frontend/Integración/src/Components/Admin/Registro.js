@@ -3,6 +3,7 @@ import axios from 'axios';
 import { NavLink } from 'react-router-dom';
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./login.css";
+import { useHistory } from "react-router-dom";
 import { Modal, ModalBody, ModalFooter, ModalHeader } from 'reactstrap';
 import NavegacionLateral from './NavegacionLateral';
 import NavBar from './NavBar'
@@ -13,6 +14,8 @@ import NavBar from './NavBar'
 const url = "http://13.65.190.213:8000/api/auth/register" //api real
 
 export default function Registro() {
+
+  let history = useHistory();
 
   const [formu, setFormu] = useState({
     username: '',
@@ -25,6 +28,8 @@ export default function Registro() {
 
       console.log(formu)
 
+      history.push('/login')
+
       const res = await fetch(url, {
         method: 'POST',
         body: JSON.stringify(formu),
@@ -35,6 +40,7 @@ export default function Registro() {
       })
       const formatoJson = await res.json();
       console.log(formatoJson);
+      // setIsRedirect(true)
       /* getCategorias();
       ModalInsertar(); */
     } catch (error) {
@@ -58,6 +64,8 @@ export default function Registro() {
   }
 
   useEffect(() => {
+
+    console.log('aqui');
 
     // getCategorias();
 
