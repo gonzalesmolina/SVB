@@ -3,6 +3,7 @@ import axios from 'axios';
 import { NavLink } from 'react-router-dom';
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./login.css";
+import { useHistory } from "react-router-dom";
 import { Modal, ModalBody, ModalFooter, ModalHeader } from 'reactstrap';
 import NavegacionLateral from './NavegacionLateral';
 import NavBar from './NavBar'
@@ -13,6 +14,8 @@ import NavBar from './NavBar'
 const url = "http://13.65.190.213:8000/api/auth/login" //api real
 
 export default function Login() {
+
+  let history = useHistory();
 
   const [formu, setFormu] = useState({
     username: '',
@@ -34,6 +37,8 @@ export default function Login() {
       })
       const formatoJson = await res.json();
       console.log(formatoJson);
+
+      history.push('/register')
       /* getCategorias();
       ModalInsertar(); */
     } catch (error) {
