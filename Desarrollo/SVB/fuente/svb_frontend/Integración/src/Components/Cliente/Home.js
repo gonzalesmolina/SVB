@@ -33,8 +33,7 @@ export default function Home() {
                
                {
                    categoria.map((categ ,i) =>(
-                       (categ.is_active)?
-                      <CardCategoria name={categ.name}/>: <></>
+                    (categ.is_active)&& <CardCategoria key={i} name={categ.name}/>
                    
                    ))
                }

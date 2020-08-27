@@ -23,7 +23,7 @@ export default function Producto() {
         description:'',
         price:0,
         discount:0,
-        // image:'',
+         image:'',
         is_active: false,
         category:0,
         tipoModal:''
@@ -96,7 +96,7 @@ const seleccionarProducto=(el)=>{
         description:el.description,
         price:el.price,
         discount:el.discount,
-        // image:el.image,
+        image:el.image,
         is_active:el.is_active,
         category:el.category,
         tipoModal:'actualizar'
@@ -264,18 +264,20 @@ const peticionDelete=()=>{
                             }
                             
                           </select>
-                          {/* <input name="category" type="text" className="form-control"
-                           placeholder="Id de categoría" onChange={handleChange} value={formu?formu.category:0}/> */}
+                         
                         </div>
-                        {/* <div className="form-group col-md-6">
+                        <div className="form-group col-md-6">
                           
                           <label>Imagen</label>
                            
-                            <div class="custom-file">
-                                <input type="file" class="custom-file-input" id="customFile"/>
-                                <label class="custom-file-label" for="customFile">Elige una imagen</label>
+                            <div className="custom-file">
+                                <input type="file" className="custom-file-input" 
+                                name="image"
+                                onChange={(e)=>{setFormu({...formu, image: URL.createObjectURL(e.target.files[0])}) }  }
+                                />
+                                <label className="custom-file-label" >Elige una imagen</label>
                               </div>
-                        </div> */}
+                        </div>
                       </div>
                     
                    
