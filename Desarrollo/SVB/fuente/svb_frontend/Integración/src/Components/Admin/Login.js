@@ -11,7 +11,7 @@ import NavBar from './NavBar'
 
 
 //const url="http://localhost:3000/categorias"; //api fake
-const url = "http://13.65.190.213:8000/api/auth/login" //api real
+const url = "http://13.65.190.213:8000/auth/login/" //api real
 
 export default function Login() {
 
@@ -38,7 +38,7 @@ export default function Login() {
       const formatoJson = await res.json();
       console.log(formatoJson);
 
-      history.push('/register')
+      history.push('/categorias')
       /* getCategorias();
       ModalInsertar(); */
     } catch (error) {

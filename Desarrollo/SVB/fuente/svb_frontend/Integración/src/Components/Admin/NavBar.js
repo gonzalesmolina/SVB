@@ -1,4 +1,5 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom';
 import { Link } from 'react-router-dom'
 
 export default function NavBar() {
@@ -15,7 +16,9 @@ export default function NavBar() {
           <div className="dropdown-menu" aria-labelledby="dropdownMenu2">
             <button className="dropdown-item" type="button">Gestión</button>
             <div className="dropdown-divider"></div>
-            <button className="dropdown-item" type="button">Salir</button>
+            <NavLink to="/login">
+              <button className="dropdown-item" type="button">Salir</button>
+            </NavLink>
           </div>
         </div>
       </nav>
