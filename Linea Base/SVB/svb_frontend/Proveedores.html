@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administrador</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+<script src="https://kit.fontawesome.com/2d05bc4f6d.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+
+    <nav class="navbar  navbar-dark bg-dark pr-4">
+      <a class="navbar-brand" href="../home.html" style="margin-left: 2em;">Bodeguita</a>
+        <!-- Example single danger button -->
+        <div class="dropdown" style="margin-right: 3em;">
+          
+            <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Admin
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+              <button class="dropdown-item" type="button">Gestión</button>
+              <div class="dropdown-divider"></div>
+              <button class="dropdown-item" type="button">Salir</button>
+            </div>
+          </div>
+      </nav>
+
+    <div class=" container-fluid contenedor ">
+        <div class="row">
+            <div class="col-md-3 side-nav">
+              <!-- <ul class="list-group ">
+                <li class="list-group-item">Pedidos</li>
+                <li class="list-group-item">Productos</li>
+                <li class="list-group-item">Categorías</li>
+                <li class="list-group-item">Proveedores</li>
+              </ul> -->
+              <!-- <div id="list-example" class="list-group mx-auto list-group-horizontal"> -->
+              <div id="list-example" class="list-group mx-auto ">
+                <a class="list-group-item list-group-item-action  " href="Pedidos.html">Pedidos</a>
+                <a class="list-group-item list-group-item-action" href="CatalogoProductos.html">Productos</a>
+                <a class="list-group-item list-group-item-action " href="Categoria.html">Categorias</a>
+                <a class="list-group-item list-group-item-action active" href="Proveedores.html">Proveedores</a>
+               
+              </div>
+            </div>
+
+            <div class="col-md-9 ">
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+                    Nuevo proveedor
+                  </button>
+    <!-- <div class="table-responsive"> -->
+        <table class="table table-striped  table-responsive">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Categoría</th>
+                <th scope="col">RUC</th>
+                <th scope="col">Teléfono</th>
+                <th scope="col">Celular</th>
+                <th scope="col">Dirección</th>
+                <th scope="col">Estado</th>
+                <th scope="col">Editar</th>
+                <th scope="col">Borrar</th>
+              </tr>
+
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Favel</td>
+                    <td>Abarrotes</td>
+                    <td>1022323456549</td>
+                    <td>524 0651</td>
+                    <td>9667745555</td>
+                    <td>Calle Saturno, Los olivos</td>
+                    <td>Activo</td>
+                    <td class="text-center"><i class="fa fa-edit fa-1x "></i></td>
+                    <td class="text-center"><i class="fa fa-trash-alt fa-1x "></i></td>
+                    
+                  </tr>
+             <tr>
+                <th scope="row">2</th>
+                <td>Proclean</td>
+                <td>Limpieza</td>
+                <td>1022323456549</td>
+                <td>536 8306</td>
+                <td>9667745555</td>
+                <td>Urb. Los alisos, Independencia</td>
+                <td>Acitvo</td>
+                <td class="text-center"><i class="fa fa-edit fa-1x "></i></td>
+                <td class="text-center"><i class="fa fa-trash-alt fa-1x "></i></td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td>Proclean</td>
+                <td>Limpieza</td>
+                <td>1022323456549</td>
+                <td>536 8306</td>
+                <td>9667745555</td>
+                <td>Urb. Los alisos, Independencia</td>
+                <td>Activo</td>
+                <td class="text-center"><i class="fa fa-edit fa-1x "></i></td>
+                <td class="text-center"><i class="fa fa-trash-alt fa-1x "></i></td>
+              </tr>
+              <tr>
+                <th scope="row">4</th>
+                <td>Proclean</td>
+                <td>Limpieza</td>
+                <td>1022323456549</td>
+                <td>536 8306</td>
+                <td>9667745555</td>
+                <td>Urb. Los alisos, Independencia</td>
+                <td>Activo</td>
+                <td class="text-center"><i class="fa fa-edit fa-1x "></i></td>
+                <td class="text-center"><i class="fa fa-trash-alt fa-1x "></i></td>
+              </tr>
+           
+              
+            </tbody>
+          </table>
+    <!-- </div> -->
+               
+
+            </div>
+
+           
+            
+        </div>
+
+    </div>
+
+    <div class=" modal fade "   id="myModal" tabindex="-1">
+        <!-- <div class=""> -->
+            <div class="modal-dialog  modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">Ingresar datos del proveedor</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <form >
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                          <label >Nombre</label>
+                          <input type="text" class="form-control" placeholder="Nombre">
+                        </div>
+                        <div class="form-group col-md-6">
+                          <label >Categoría</label>
+                          <input type="text" class="form-control" placeholder="Categoría">
+                        </div>
+                      </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label >RUC</label>
+                            <input type="text" class="form-control" placeholder="RUC">
+                          </div>
+                          <div class="form-group col-md-6">
+                            <label>Teléfono</label>
+                            <input type="text" class="form-control" placeholder="Teléfono">
+                          </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label >Celular</label>
+                            <input type="text" class="form-control" placeholder="Cel.">
+                          </div>
+                          <div class="form-group col-md-6">
+                            <label>Dirección</label>
+                            <input type="text" class="form-control" placeholder="Dirección">
+                          </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label>Estado:</label> <br>
+                            <input type="checkbox" name="estado" value="true" checked>
+                            <label for="estado"> Activo</label>
+                          </div>
+                          
+                    </div>
+                  </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary">Guardar</button>
+                  <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+                  
+                </div>
+              </div>
+            </div>
+          <!-- </div> -->
+
+      </div>
+    
+</body>
+<style>
+  .list-group{
+    margin-top: 4em;
+    width: 160px;
+}
+  
+    /* .contenedor{
+        margin: 0;
+    } */
+    form{
+        margin: 1em;
+    }
+    .row{
+        /* padding-top: 2em; */
+        padding: 2em 2em 0 2em;
+    }
+    .table{
+        margin-top: 1.5em;
+    }
+td>i{
+    cursor: pointer;
+}
+    body{
+        padding-bottom: 5em;
+        
+    }
+
+.home{
+    color: white !important; 
+}
+::-webkit-input-placeholder{ 
+color:rgb(195, 194, 194) !important; 
+;
+}
+::-moz-input-placeholder{ 
+ color:rgb(195, 194, 194) !important;
+ }
+form .title{
+ font-size: 1.7em;
+}
+form label{
+ font-size: 14px;
+ font-weight: 500;
+
+ color: #282c34;
+}
+@media (min-width: 0) and (max-width: 768px) {
+    /* Solo se aplicarán entre los tamaños indicados */
+    .side-nav{
+      display: none;
+    }
+}
+
+</style>
+
+<script>
+$(document).ready(function(){
+    $('#myModal').on('shown.bs.modal', function () {
+  $('#myInput').trigger('focus')
+})
+})
+
+</script>
+
+</html>
