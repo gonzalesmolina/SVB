@@ -1,4 +1,5 @@
 from django.shortcuts import get_object_or_404
+from django.db import transaction
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.generics import ListAPIView
 from rest_framework.permissions import IsAuthenticated
@@ -142,3 +143,52 @@ def remove_single_item_from_cart(request, pk):
                 order.items.remove(order_item)
     serializer = OrderSerializer(order)
     return Response(serializer.data)
+
+
+class CreateOrderApiView(APIView):
+
+    def post(self, request, *args, **kwargs):
+        products_data = request.data.pop('products', None)
+        payment_data = request.data.pop('payment', None)
+        user = request.user
+        try:
+            with transaction.atomic():
+                order_qs = Order.objects.filter(user=request.user, ordered=False)
+                if order_qs.exists():
+                    order = order_qs[0]
+                else:
+                    order = Order()
+                    order.user = user
+                    order.save()
+                for product in products_data:
+                    order_item = OrderItem()
+                    order_item.user = user
+                    order_item.item = Product.objects.get(id=product.get('id'))
+                    order_item.quantity = product.get('quantity')
+                    order_item.save()
+                    order.items.add(order_item)
+                order.save()
+                payment = Payment()
+                payment.user = user
+                payment.payment_method = payment_data.get('payment_method')
+                payment.operation_number = payment_data.get('operation_number')
+                payment.amount = order.get_total()
+                payment.save()
+                order_items = order.items.all()
+                order_items.update(ordered=True)
+                for item in order_items:
+                    item.save()
+                order.ordered = True
+                order.payment = payment
+                order.save()
+                order_serializer = OrderSerializer(order)
+                payment_serializer = PaymentSerializer(payment)
+                return Response({
+                    'msg': 'Orden pagada',
+                    'orden': order_serializer.data,
+                    'payment': payment_serializer.data
+                })
+        except Exception as e:
+            return Response({
+                'errors': e.__str__()
+            })
