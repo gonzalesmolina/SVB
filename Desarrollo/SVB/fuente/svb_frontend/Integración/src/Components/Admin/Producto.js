@@ -67,11 +67,9 @@ export default function Producto() {
         }catch(error){
             console.log(error.message);
         }
-          
-          
-        
 
     }
+    
 function ModalInsertar(){
     setModalInsertar(!modalInsertar);
 
@@ -111,7 +109,7 @@ const peticionPut= async()=>{
                method: 'PUT',
                body: JSON.stringify(formu),
                headers: {
-                //    'Accept': 'application/json',
+                //  'Accept': 'application/json',
                  'Content-type': 'application/json'
                }
              })
