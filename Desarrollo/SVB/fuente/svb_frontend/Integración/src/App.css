@@ -112,3 +112,46 @@ color: #282c34;
 #img-icon{
   width: 50px;
 }
+
+/* Fin componente producto */
+
+/* componente navegacionLateral */
+/* a.current{
+  background: dodgerblue;
+} */
+
+/* componente nav categoria */
+.cabecera-categoria{
+  background: #cacaca;
+}
+
+.list-group{
+  width: 200px;
+}
+
+@media (min-width: 0) and (max-width: 768px) {
+  /* Solo se aplicarán entre los tamaños indicados */
+  .catergorias{
+    display: none;
+  }
+}
+
+/* Componente  card producto */
+/* .card-img-top{
+  margin:1em;
+} */
+
+/* Componente .carrito */
+
+.media, .detalle{
+  border: 1px solid #cccbcb;
+  border-radius: 8px;
+  padding: 9px 10px;
+  margin-bottom: 1em;
+}
+
+/* fin componente .carrito */
+
+.img-prodCart{
+  width:100px;
+}
