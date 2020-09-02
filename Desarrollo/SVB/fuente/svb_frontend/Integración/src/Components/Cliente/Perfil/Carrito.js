@@ -85,13 +85,13 @@ function Total({bolsa}) {
     
     }
   
-    const alerta=()=>{
-      return (
-        <div className="alert alert-primary" role="alert">
-           La orden se creó! :)
-         </div>
-      )
-    }
+    // const alerta=()=>{
+    //   return (
+    //     <div className="alert alert-primary" role="alert">
+    //        La orden se creó! :)
+    //      </div>
+    //   )
+    // }
     const postOrdenes= async ()=>{
             
         // console.log("pagando...");
