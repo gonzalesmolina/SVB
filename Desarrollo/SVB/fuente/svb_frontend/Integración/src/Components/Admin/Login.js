@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+// import axios from 'axios';
 import { NavLink } from 'react-router-dom';
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./login.css";
 import { useHistory } from "react-router-dom";
-import { Modal, ModalBody, ModalFooter, ModalHeader } from 'reactstrap';
-import NavegacionLateral from './NavegacionLateral';
-import NavBar from './NavBar'
+// import { Modal, ModalBody, ModalFooter, ModalHeader } from 'reactstrap';
+// import NavegacionLateral from './NavegacionLateral';
+// import NavBar from './NavBar'
 
 
 
@@ -70,32 +70,32 @@ export default function Login() {
 
   return (
     <>
-      <div class="container">
-        <div class="row">
+      <div className="container">
+        <div className="row">
 
-          <div class="col-md-6 mx-auto ">
+          <div className="col-md-6 mx-auto ">
 
-            <div class="container register">
+            <div className="container register">
               <form>
-                <label class="title">Iniciar Sesión</label>
+                <label className="title">Iniciar Sesión</label>
 
 
 
-                <div class="form-group col">
+                <div className="form-group col">
                   <label>Nombre de usuario</label>
                   <input type="text" name="username" onChange={handleChange} value={formu ? formu.username : ''} class="form-control" placeholder="Ingresa tu nombre de usuario" />
                 </div>
-                <div class="form-group col">
+                <div className="form-group col">
                   <label>Contraseña</label>
                   <input type="password" name="password" onChange={handleChange} value={formu ? formu.password : ''} class="form-control" placeholder="Ingresa tu contraseña" />
                 </div>
 
 
 
-                <div class="form-group col">
+                <div className="form-group col">
                   <button type="button" onClick={() => postLogin()} class="btn btn-success  btn-block">Ingresar</button>
                 </div>
-                <div class="form-group col">
+                <div className="form-group col">
                   <small>¿Aún no tienes cuenta? ingresa
                   <NavLink to="/registro"> Aqui</NavLink>
                   </small>
