@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import NavbarPerfil from './NavbarPerfil'
 import ProductoCart from './ProductoCart'
 import { Modal, ModalBody, ModalHeader } from 'reactstrap';
+import { useHistory } from "react-router-dom";
 
 
 const url = "http://13.65.190.213:8000/api/orders/create"
@@ -115,7 +116,7 @@ function Total({ bolsa }) {
       const formatoJson = await res.json();
       console.log(formatoJson);
 
-      localStorage.removeItem('carrito');
+      
 
       ModalInsertar();
       alert('Compra realiza con exito')
