@@ -6,9 +6,8 @@ export default function NavegacionLateral() {
     return (
      
         <div id="list-example" className="list-group mx-auto ">
-          
-         
-          <NavLink to="/ordenes" className="list-group-item list-group-item-action" activeClassName="active">Pedidos</NavLink>
+  
+        <NavLink to="/ordenes" className="list-group-item list-group-item-action" activeClassName="active">Pedidos</NavLink>
         
         <NavLink to="/productos" className="list-group-item list-group-item-action" activeClassName="active">  Productos </NavLink>
 

@@ -199,7 +199,7 @@ const peticionDelete=()=>{
    {/* </div> sirve para centrar la tabla */}
    <Modal isOpen={modalInsertar}>
                 <ModalHeader style={{display: 'block'}}>
-                <h5 className="modal-title">Ingresar datos de la categoría</h5>
+                <strong className="modal-title">Ingresar datos de la categoría</strong>
                   <span style={{float: 'right', cursor: 'pointer'}} onClick={()=>ModalInsertar()}
                   className="close"
                   >x</span>

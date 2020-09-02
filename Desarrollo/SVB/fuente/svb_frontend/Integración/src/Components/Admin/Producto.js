@@ -61,7 +61,7 @@ export default function Producto() {
             }
           })
      const formatoJson=await res.json();
-    // console.log(formatoJson);     
+     console.log(formatoJson);     
           getProductos();
           ModalInsertar();
         }catch(error){
@@ -181,8 +181,8 @@ const peticionDelete=()=>{
 
             </thead>
             <tbody>
-                { productos.map((el,i)=>(
-                    <tr key={i}>
+                { productos.map((el)=>(
+                    <tr key={el.id}>
                     {/* <td >{el.id}</td> */}
                     <td>{el.name}</td>
                     <td>{el.description}</td>
@@ -190,7 +190,7 @@ const peticionDelete=()=>{
                     <td>{el.discount}</td>
                     <td>{el.category}</td>
                     {/* <td>{el.image}</td> */}
-                    <td><img src={el.image} alt="" id="img-icon"/></td>
+                    <td><img src={el.image} alt={el.name} id="img-icon"/></td>
                     {(el.is_active)? <td>Activo</td> : <td>No activo</td>}
                     <td className="text-center" >
 
@@ -273,7 +273,7 @@ const peticionDelete=()=>{
                             <div className="custom-file">
                                 <input type="file" className="custom-file-input" 
                                 name="image"
-                                onChange={(e)=>{setFormu({...formu, image: URL.createObjectURL(e.target.files[0])}) }  }
+                                onChange={(e)=>{setFormu({...formu, image:URL.createObjectURL(e.target.files[0])}) }  }
                                 />
                                 <label className="custom-file-label" >Elige una imagen</label>
                               </div>

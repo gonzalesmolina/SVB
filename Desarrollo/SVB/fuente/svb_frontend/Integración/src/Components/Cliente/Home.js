@@ -9,7 +9,7 @@ const url="http://13.65.190.213:8000/api/products/categories" //api real
 export default function Home() {
 
     const [categoria, setCategoria]=useState([]);
-
+    const [cartShop, setCartShop] = useState( localStorage.getItem("carrito")?JSON.parse(localStorage.getItem("carrito")):'');
     const getCategorias= async ()=>{
       
         const res = await fetch(url);
@@ -26,14 +26,14 @@ export default function Home() {
     },[])
     return (
         <div>
-            <NavBarBodega/>
+          <NavBarBodega cartShop={cartShop}/>
             <div className="container-fluid contenido">
 
             <div className="row  d-flex flex-row justify-content-center">
                
                {
-                   categoria.map((categ ,i) =>(
-                    (categ.is_active)&& <CardCategoria key={i} name={categ.name}/>
+                   categoria.map((categ) =>(
+                    (categ.is_active)&& <CardCategoria key={categ.id} name={categ.name}/>
                    
                    ))
                }
