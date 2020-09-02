@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 export default function NavBar() {
     return (
         <nav className="navbar  navbar-dark bg-dark pr-4">
-      <Link to="/">  <a className="navbar-brand" href="../home.html" id="loguito">Bodeguita</a> </Link>
+      <Link to="/" className="navbar-brand" id="loguito">  Bodeguita </Link>
      
         <div className="dropdown" id="dropDown">
     

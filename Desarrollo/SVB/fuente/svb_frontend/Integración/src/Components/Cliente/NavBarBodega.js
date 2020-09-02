@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-export default function NavBarBodega() {
+export default function NavBarBodega({cartShop}) {
     return (
       
     <nav className="navbar navbar-expand-lg navbar-light " >
@@ -29,11 +29,18 @@ export default function NavBarBodega() {
   
               </form>
               <div >
-                  <a href className="registro">Login|Registro</a>
+                  {/* <a href className="registro">Login|Registro</a> */}
+                  <Link to="/login" className="registro">Login|Registro</Link>
                 
             </div>
 
-              <span className="carrito"> <i className="fa fa-shopping-cart fa-1x "></i></span>
+            <Link to="/cart">
+                  <span className="carrito"> 
+                     <i className="fa fa-shopping-cart fa-1x "></i>
+                      <span className="badge badge-pill badge-warning">{cartShop?cartShop.length:0}
+                      </span>
+                  </span>
+            </Link> 
               
             </div>
     </nav>
