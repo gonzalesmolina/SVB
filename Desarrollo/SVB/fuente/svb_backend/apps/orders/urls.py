@@ -6,7 +6,8 @@ from apps.orders.views import (
     PaymentApiView,
     add_to_cart,
     remove_from_cart,
-    remove_single_item_from_cart
+    remove_single_item_from_cart,
+    CreateOrderApiView
 )
 
 
@@ -18,5 +19,6 @@ urlpatterns = [
          name='remove-from-cart'),
     path('remove_item_from_cart/<int:pk>', remove_single_item_from_cart,
          name='remove-single-item-from-cart'),
-    path('payment', PaymentApiView.as_view(), name='payment-checkout')
+    path('payment', PaymentApiView.as_view(), name='payment-checkout'),
+    path('create', CreateOrderApiView.as_view(), name='order-create'),
 ]
