@@ -116,10 +116,10 @@ function Total({ bolsa }) {
       const formatoJson = await res.json();
       console.log(formatoJson);
 
-      
+      localStorage.removeItem('carrito');
 
       ModalInsertar();
-      alert('Compra realiza con exito')
+      
       history.push('/');
     } catch (error) {
       console.log(error.message);
