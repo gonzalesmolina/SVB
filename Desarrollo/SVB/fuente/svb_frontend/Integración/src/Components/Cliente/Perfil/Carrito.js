@@ -119,7 +119,7 @@ function Total({ bolsa }) {
       localStorage.removeItem('carrito');
 
       ModalInsertar();
-      
+      alert('Compra realiza con exito')
       history.push('/');
     } catch (error) {
       console.log(error.message);
