@@ -52,6 +52,7 @@ useEffect(() => {
                         </thead>
                         <tbody>
                             {
+                                orders&&
                                orders.map(el=>(
                                 <tr key={el.id}>
                                 <td >{el.number}</td>
@@ -69,13 +70,13 @@ useEffect(() => {
                                     </ul>
                                 </td>
                                 <td>{
-                                el.ordered? "Realizada": "No realizada" 
+                                el.ordered? "Pagada": "No pagada" 
                                 }</td>
                                 <td>{ el.created_at }</td>
                                 
                                 </tr>
 
-                               ))         
+                               ))
 
                             }
                         

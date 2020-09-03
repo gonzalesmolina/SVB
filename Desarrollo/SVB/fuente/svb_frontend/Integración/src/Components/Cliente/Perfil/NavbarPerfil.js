@@ -2,6 +2,16 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 
 export default function NavbarPerfil() {
+
+const logout=()=>{
+   localStorage.removeItem('user');
+   localStorage.removeItem('token');
+
+   JSON.parse(localStorage.getItem('carrito'))&&localStorage.removeItem('carrito');
+   
+  //console.log("salir",JSON.parse(localStorage.getItem('carrito')));
+}
+
     return (
         <nav className="navbar  navbar-light bg-light">
         <Link to="/" className="navbar-brand"  style={{"marginLeft": "2em"}}>Home</Link>
@@ -11,11 +21,11 @@ export default function NavbarPerfil() {
             aria-haspopup="true" aria-expanded="false">
             {JSON.parse(localStorage.getItem("user"))}
           </button>
-          <div className="dropdown-menu" aria-labelledby="dropdownMenu2">
-          <Link to="/usuario" > <button className="dropdown-item" type="button">Perfil</button> </Link>
+          <div className="dropdown-menu " aria-labelledby="dropdownMenu2">
+          <Link to="/usuario" > <button className="dropdown-item" type="button">Historial</button> </Link>
             <Link to="/cart" >  <button className="dropdown-item" type="button">Mi carrito</button> </Link>
             <div className="dropdown-divider"></div>
-            <button className="dropdown-item" type="button">Salir</button>
+            <Link to="/" >  <button className="dropdown-item" type="button" onClick={logout}>Salir</button></Link>
           </div>
         </div>
       </nav>

@@ -99,7 +99,7 @@ export default function Carrito() {
         try {
           let dataa = { "products": bolsa, "payment": formu }
           console.log("ordeeeeen", dataa);
-          const res = await fetch(url, {
+          const res = await fetch(url,{
             method: 'POST',
             body: JSON.stringify(dataa),
             headers: {
