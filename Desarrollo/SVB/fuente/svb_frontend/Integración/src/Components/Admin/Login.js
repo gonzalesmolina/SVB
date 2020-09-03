@@ -42,6 +42,7 @@ export default function Login() {
       /* getCategorias();
       ModalInsertar(); */
       localStorage.setItem('token', JSON.stringify(formatoJson.token));
+      localStorage.setItem('user', JSON.stringify(formu.username));
     } catch (error) {
       console.log(error.message);
     }
@@ -79,9 +80,6 @@ export default function Login() {
             <div className="container register">
               <form>
                 <label className="title">Iniciar Sesión</label>
-
-
-
                 <div className="form-group col">
                   <label>Nombre de usuario</label>
                   <input type="text" name="username" onChange={handleChange} value={formu ? formu.username : ''} className="form-control" placeholder="Ingresa tu nombre de usuario" />
@@ -90,22 +88,17 @@ export default function Login() {
                   <label>Contraseña</label>
                   <input type="password" name="password" onChange={handleChange} value={formu ? formu.password : ''} className="form-control" placeholder="Ingresa tu contraseña" />
                 </div>
-
-
-
                 <div className="form-group col">
-                  <button type="button" onClick={() => postLogin()} class="btn btn-success  btn-block">Ingresar</button>
+                  <button type="button" onClick={() => postLogin()} className="btn btn-success  btn-block">Ingresar</button>
                 </div>
                 <div className="form-group col">
                   <small>¿Aún no tienes cuenta? ingresa
                   <NavLink to="/registro"> Aqui</NavLink>
                   </small>
                 </div>
-
               </form>
             </div>
           </div>
-
         </div>
       </div>
     </>

@@ -2,7 +2,8 @@ import React, {useEffect,useState} from 'react'
 import NavbarPerfil from './NavbarPerfil'
 
 
-const url ="http://13.65.190.213:8000/api/orders/";
+const url =process.env.REACT_APP_ORDERS;
+const token = JSON.parse(localStorage.getItem("token"));
 
 export default function Usuario() {
 
@@ -12,7 +13,7 @@ export default function Usuario() {
       
         const res = await fetch(url,{
             headers: {
-                'Authorization': 'Token 31c766acf86fe3ebe6b25799b00a9cf75763d64d',
+                'Authorization': `Token ${token}`,
                   'Accept': 'application/json',
                 'Content-type': 'application/json'
               }}

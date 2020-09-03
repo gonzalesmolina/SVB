@@ -188,12 +188,6 @@ export default function Categoria() {
 
                 }
 
-
-
-
-
-
-
               </tbody>
             </table>
             {/* </div> sirve para centrar la tabla */}

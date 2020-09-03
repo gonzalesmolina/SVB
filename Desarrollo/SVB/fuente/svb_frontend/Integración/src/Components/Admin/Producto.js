@@ -205,13 +205,6 @@ export default function Producto() {
 
 
                 }
-
-
-
-
-
-
-
               </tbody>
             </table>
             {/* </div> sirve para centrar la tabla */}
