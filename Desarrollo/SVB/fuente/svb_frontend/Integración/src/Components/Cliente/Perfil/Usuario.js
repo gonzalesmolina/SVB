@@ -32,6 +32,7 @@ useEffect(() => {
              <NavbarPerfil/>
 
              <div className="contenido container-fluid ">
+<<<<<<< HEAD
              <h3 style={{"marginLeft":"2em"}}>Órdenes</h3>
 
                 <div className="row">
@@ -47,6 +48,24 @@ useEffect(() => {
                             <th scope="col">Productos</th>
                             <th scope="col">Orden</th>
                             <th scope="col">Fecha</th>
+=======
+
+
+                <div className="row">
+
+
+                    <h3>Órdenes</h3>
+
+                    <div className="col-md-8">
+                  
+                    <table className="table">
+                        <thead>
+                            <tr>
+                            <th scope="col">Número de orden</th>
+                            <th scope="col">Número de items</th>
+                            <th scope="col">Productos</th>
+                            <th scope="col">Orden</th>
+>>>>>>> 74cceab4f80164ccb71225ba38f65d60519fc67a
                             </tr>
                         </thead>
                         <tbody>
@@ -54,7 +73,11 @@ useEffect(() => {
                                orders.map(el=>(
                                 <tr key={el.id}>
                                 <td >{el.number}</td>
+<<<<<<< HEAD
                                
+=======
+                                <td >{el.items.length}</td>
+>>>>>>> 74cceab4f80164ccb71225ba38f65d60519fc67a
                                 <td >
                                     <ul className="list-unstyled">
                                     {
@@ -70,7 +93,10 @@ useEffect(() => {
                                 <td>{
                                 el.ordered? "Realizada": "No realizada" 
                                 }</td>
+<<<<<<< HEAD
                                 <td>{ el.created_at }</td>
+=======
+>>>>>>> 74cceab4f80164ccb71225ba38f65d60519fc67a
                                 
                                 </tr>
 
@@ -83,7 +109,11 @@ useEffect(() => {
                  </div>
 
                 </div>
+<<<<<<< HEAD
              </div>  
+=======
+             </div>   
+>>>>>>> 74cceab4f80164ccb71225ba38f65d60519fc67a
 
         </div>
     )
