@@ -22,6 +22,7 @@ class OrderItemSerializer(serializers.ModelSerializer):
 
 class OrderSerializer(serializers.ModelSerializer):
     items = OrderItemSerializer(many=True)
+    total_amount = serializers.SerializerMethodField()
 
     class Meta:
         model = Order
@@ -37,8 +38,12 @@ class OrderSerializer(serializers.ModelSerializer):
             'payment',
             'coupon',
             'created_at',
-            'modified_at'
+            'modified_at',
+            'total_amount'
         )
+
+    def get_total_amount(self, obj):
+        return obj.get_total()
 
 
 class PaymentSerializer(serializers.ModelSerializer):
