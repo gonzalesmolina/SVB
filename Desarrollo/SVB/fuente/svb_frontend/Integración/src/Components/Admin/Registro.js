@@ -11,7 +11,7 @@ import { useHistory } from "react-router-dom";
 
 
 //const url="http://localhost:3000/categorias"; //api fake
-const url = "http://13.65.190.213:8000/auth/register/" //api real
+const url = process.env.REACT_APP_REGISTER;
 
 export default function Registro() {
 
@@ -82,8 +82,6 @@ export default function Registro() {
             <div className="container register">
               <form >
                 <label className="title">Crea una cuenta</label>
-
-
                 <div className="form-group col">
                   <label >Nombre de usuario</label>
                   <input type="text" name="username" onChange={handleChange} value={formu ? formu.username : ''} className="form-control" placeholder="Ingresa tu nombre de usuario" />
@@ -96,9 +94,6 @@ export default function Registro() {
                   <label >Contraseña</label>
                   <input type="password" name="password" onChange={handleChange} value={formu ? formu.password : ''} className="form-control" placeholder="Ingresa tu contraseña" />
                 </div>
-
-
-
                 <div className="form-group col">
                   <button type="button" onClick={() => postRegistro()} className="btn btn-success  btn-block">Registrarse</button>
                   <div className="form-group col">

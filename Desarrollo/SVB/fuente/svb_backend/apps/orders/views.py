@@ -26,6 +26,9 @@ class OrderListView(ListAPIView):
     serializer_class = OrderSerializer
     pagination_class = DefaultPagination
 
+    def get_queryset(self):
+        return self.queryset.filter(user=self.request.user)
+
 
 class OrderApiView(APIView):
     def get(self, request, *args, **kwargs):

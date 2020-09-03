@@ -9,7 +9,7 @@ export default function NavbarPerfil() {
         <div className="dropdown" style={{"marginRight": "4em"}}>
           <button className="btn btn-warning dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown"
             aria-haspopup="true" aria-expanded="false">
-            Usuario
+            {JSON.parse(localStorage.getItem("user"))}
           </button>
           <div className="dropdown-menu" aria-labelledby="dropdownMenu2">
           <Link to="/usuario" > <button className="dropdown-item" type="button">Perfil</button> </Link>

@@ -11,7 +11,7 @@ export default function NavBar() {
     
           <button className="btn btn-success dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown"
             aria-haspopup="true" aria-expanded="false">
-            Admin
+            {JSON.parse(localStorage.getItem("user"))}
           </button>
           <div className="dropdown-menu" aria-labelledby="dropdownMenu2">
             <button className="dropdown-item" type="button">Gestión</button>
