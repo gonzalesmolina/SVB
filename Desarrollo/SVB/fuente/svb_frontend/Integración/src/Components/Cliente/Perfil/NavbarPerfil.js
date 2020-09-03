@@ -12,7 +12,7 @@ export default function NavbarPerfil() {
             Usuario
           </button>
           <div className="dropdown-menu" aria-labelledby="dropdownMenu2">
-            <button className="dropdown-item" type="button">Perfil</button>
+          <Link to="/usuario" > <button className="dropdown-item" type="button">Perfil</button> </Link>
             <Link to="/cart" >  <button className="dropdown-item" type="button">Mi carrito</button> </Link>
             <div className="dropdown-divider"></div>
             <button className="dropdown-item" type="button">Salir</button>

@@ -8,6 +8,7 @@ import Login from './Components/Admin/Login';
 import Registro from './Components/Admin/Registro';
 import ProductoXCateg from './Components/Cliente/ProductoXCateg';
 import Carrito from './Components/Cliente/Perfil/Carrito';
+import Usuario from './Components/Cliente/Perfil/Usuario';
 
  const Routes=()=> {
     return (
@@ -20,6 +21,7 @@ import Carrito from './Components/Cliente/Perfil/Carrito';
            <Route exact path="/productos" component={Producto} />
            <Route exact path="/productos/:idCateg" component={ProductoXCateg} />
            <Route exact path="/cart" component={Carrito} />
+           <Route exact path="/usuario" component={Usuario} />
 
            
 

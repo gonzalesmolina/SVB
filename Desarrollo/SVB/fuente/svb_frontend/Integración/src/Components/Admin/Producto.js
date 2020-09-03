@@ -57,11 +57,12 @@ export default function Producto() {
             body: JSON.stringify(formu),
             headers: {
                 'Accept': 'application/json',
-              'Content-type': 'application/json'
+               'Content-type': 'application/json'
+              // 'Content-type': 'application/x-www-form-urlencoded'
             }
           })
      const formatoJson=await res.json();
-     console.log(formatoJson);     
+    //  console.log(formatoJson);     
           getProductos();
           ModalInsertar();
         }catch(error){
