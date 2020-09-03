@@ -32,22 +32,21 @@ useEffect(() => {
              <NavbarPerfil/>
 
              <div className="contenido container-fluid ">
-
+             <h3 style={{"marginLeft":"2em"}}>Órdenes</h3>
 
                 <div className="row">
 
-
-                    <h3>Órdenes</h3>
-
-                    <div className="col-md-8">
+                {/* offset-md-4 */}
+                    <div className="col-md-8  offset-md-4 ">
                   
-                    <table className="table">
-                        <thead>
+                    <table className="table table-striped table-responsive ">
+                        <thead className="thead-dark">
                             <tr>
                             <th scope="col">Número de orden</th>
-                            <th scope="col">Número de items</th>
+                            
                             <th scope="col">Productos</th>
                             <th scope="col">Orden</th>
+                            <th scope="col">Fecha</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -55,7 +54,7 @@ useEffect(() => {
                                orders.map(el=>(
                                 <tr key={el.id}>
                                 <td >{el.number}</td>
-                                <td >{el.items.length}</td>
+                               
                                 <td >
                                     <ul className="list-unstyled">
                                     {
@@ -71,6 +70,7 @@ useEffect(() => {
                                 <td>{
                                 el.ordered? "Realizada": "No realizada" 
                                 }</td>
+                                <td>{ el.created_at }</td>
                                 
                                 </tr>
 
@@ -83,7 +83,7 @@ useEffect(() => {
                  </div>
 
                 </div>
-             </div>   
+             </div>  
 
         </div>
     )
