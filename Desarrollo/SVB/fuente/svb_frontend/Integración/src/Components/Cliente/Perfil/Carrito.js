@@ -85,31 +85,11 @@ export default function Carrito() {
       const ModalInsertar = () => {
         setModalInsertar(!modalInsertar);
     
-<<<<<<< HEAD
       }
     
-      const alerta = () => {
-        return (
-          <div className="alert alert-primary" role="alert">
-            La orden se creó! :)
-          </div>
-        )
-      }
+    
       const postOrdenes = async () => {
     
-=======
-    }
-  
-    // const alerta=()=>{
-    //   return (
-    //     <div className="alert alert-primary" role="alert">
-    //        La orden se creó! :)
-    //      </div>
-    //   )
-    // }
-    const postOrdenes= async ()=>{
-            
->>>>>>> 74cceab4f80164ccb71225ba38f65d60519fc67a
         // console.log("pagando...");
     
         // console.log("bolsa",bolsa);
