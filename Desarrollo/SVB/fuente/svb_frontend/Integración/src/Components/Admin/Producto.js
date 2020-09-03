@@ -46,6 +46,7 @@ export default function Producto() {
         const data= await res.json();
      //   console.table("datos",data)
         setProductos(data.results); //es para el url verdadero
+         console.log("datos",data.results)
       // setProductos(data) //de mi api fake json server
       
     }
@@ -70,7 +71,16 @@ export default function Producto() {
         }
 
     }
-    
+    // const postProductos=async ()=>{
+    //   delete formu.id;
+    //   await axios.post(url,formu).then(response=>{
+    //     ModalInsertar();
+    //     getProductos();
+    //    }).catch(error=>{
+    //      console.log(error.message);
+    //    })
+    // }
+
 function ModalInsertar(){
     setModalInsertar(!modalInsertar);
 
@@ -95,7 +105,7 @@ const seleccionarProducto=(el)=>{
         description:el.description,
         price:el.price,
         discount:el.discount,
-        image:el.image,
+        image:'',
         is_active:el.is_active,
         category:el.category,
         tipoModal:'actualizar'
@@ -110,7 +120,7 @@ const peticionPut= async()=>{
                method: 'PUT',
                body: JSON.stringify(formu),
                headers: {
-                //  'Accept': 'application/json',
+                  'Accept': 'application/json',
                  'Content-type': 'application/json'
                }
              })
@@ -124,7 +134,12 @@ const peticionPut= async()=>{
            }
 
 }
-
+// const peticionPut=()=>{
+//   axios.put(url+"/"+formu.id,formu).then(response=>{
+//     ModalInsertar();
+//              getProductos();
+//   })
+// }
 
 const peticionDelete=()=>{
     axios.delete(url+"/"+formu.id).then(response=>{
