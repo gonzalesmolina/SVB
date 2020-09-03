@@ -11,7 +11,7 @@ import { useHistory } from "react-router-dom";
 
 
 //const url="http://localhost:3000/categorias"; //api fake
-const url = "http://13.65.190.213:8000/auth/login/" //api real
+const url = process.env.REACT_APP_LOGIN; //api real
 
 export default function Login() {
 
@@ -41,6 +41,7 @@ export default function Login() {
       history.push('/categorias')
       /* getCategorias();
       ModalInsertar(); */
+      localStorage.setItem('token', JSON.stringify(formatoJson.token));
     } catch (error) {
       console.log(error.message);
     }
@@ -83,11 +84,11 @@ export default function Login() {
 
                 <div className="form-group col">
                   <label>Nombre de usuario</label>
-                  <input type="text" name="username" onChange={handleChange} value={formu ? formu.username : ''} class="form-control" placeholder="Ingresa tu nombre de usuario" />
+                  <input type="text" name="username" onChange={handleChange} value={formu ? formu.username : ''} className="form-control" placeholder="Ingresa tu nombre de usuario" />
                 </div>
                 <div className="form-group col">
                   <label>Contraseña</label>
-                  <input type="password" name="password" onChange={handleChange} value={formu ? formu.password : ''} class="form-control" placeholder="Ingresa tu contraseña" />
+                  <input type="password" name="password" onChange={handleChange} value={formu ? formu.password : ''} className="form-control" placeholder="Ingresa tu contraseña" />
                 </div>
 
 

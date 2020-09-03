@@ -5,7 +5,8 @@ import { Modal, ModalBody, ModalHeader } from 'reactstrap';
 import { useHistory } from "react-router-dom";
 
 
-const url = "http://13.65.190.213:8000/api/orders/create"
+const url = process.env.REACT_APP_ORDER_CREATE;
+const token = JSON.parse(localStorage.getItem("token"));
 
 export default function Carrito() {
 
@@ -102,7 +103,7 @@ export default function Carrito() {
             method: 'POST',
             body: JSON.stringify(dataa),
             headers: {
-              'Authorization': 'Token 31c766acf86fe3ebe6b25799b00a9cf75763d64d',
+              'Authorization': `Token ${token}`,
               'Accept': 'application/json',
               'Content-type': 'application/json'
             }

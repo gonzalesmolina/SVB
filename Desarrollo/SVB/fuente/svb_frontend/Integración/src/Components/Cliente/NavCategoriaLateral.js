@@ -2,7 +2,7 @@ import React,{useState,useEffect} from 'react'
 import {NavLink} from  'react-router-dom'
 
 
-const urlCateg="http://13.65.190.213:8000/api/products/categories"
+const urlCateg=process.env.REACT_APP_CATEGORIES;
 
 
 export default function NavCategoriaLateral() {
