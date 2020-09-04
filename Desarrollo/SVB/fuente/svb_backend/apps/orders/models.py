@@ -42,7 +42,7 @@ class Payment(TimeStampedModel):
         verbose_name_plural = 'Pagos'
 
     def __str__(self):
-        return self.user.username
+        return self.operation_number if self.operation_number is not None else self.payment_method
 
 
 class Coupon(TimeStampedModel):
@@ -135,7 +135,7 @@ class Order(TimeStampedModel):
         verbose_name_plural = 'Órdenes de compra'
 
     def __str__(self):
-        return self.user.username if self.number is None else self.number
+        return self.number if self.number is not None else self.user
 
     def save(self, *args, **kwargs):
         if self.id is not None:
