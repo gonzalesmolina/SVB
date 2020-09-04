@@ -3,6 +3,15 @@ import { NavLink } from 'react-router-dom';
 import { Link } from 'react-router-dom'
 
 export default function NavBar() {
+
+  const logout=()=>{
+    localStorage.removeItem('user');
+    localStorage.removeItem('token');
+ 
+    //JSON.parse(localStorage.getItem('carrito'))&&localStorage.removeItem('carrito');
+    
+   //console.log("salir",JSON.parse(localStorage.getItem('carrito')));
+ }
     return (
         <nav className="navbar  navbar-dark bg-dark pr-4">
       <Link to="/" className="navbar-brand" id="loguito">  Bodeguita </Link>
@@ -14,10 +23,9 @@ export default function NavBar() {
             {JSON.parse(localStorage.getItem("user"))}
           </button>
           <div className="dropdown-menu" aria-labelledby="dropdownMenu2">
-            <button className="dropdown-item" type="button">Gestión</button>
-            <div className="dropdown-divider"></div>
+          
             <NavLink to="/login">
-              <button className="dropdown-item" type="button">Salir</button>
+              <button className="dropdown-item" type="button" onClick={logout}>Salir</button>
             </NavLink>
           </div>
         </div>

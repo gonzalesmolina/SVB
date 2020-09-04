@@ -33,7 +33,7 @@ export default function NavCategoriaLateral() {
                             <a className="list-group-item list-group-item-action  cabecera-categoria" href=".">Nuestras categorias</a>
                             {
                                 categ.map((catg)=>(
-                                    <NavLink to={"/"+catg.name} 
+                                    <NavLink to={`/productos/${catg.id}`} 
                                     className="list-group-item list-group-item-action" 
                                     key={catg.id}
                                     activeClassName="active"

@@ -147,7 +147,7 @@ export default function Carrito() {
       return (
         <>
     
-          <div className="detalle">
+          <div className="detalle ">
             <div className="mb-4 text-center w-100">
               <h3>RESUMEN DE PEDIDO</h3>
             </div>
@@ -161,7 +161,7 @@ export default function Carrito() {
                 </h5>
               </div>
             </div>
-            <div className="mb-2 ml-5 mr-5">
+            {/* <div className="mb-2 ml-5 mr-5">
               <div className="d-flex justify-content-between">
                 <h5>
                   ENVÍO:
@@ -170,7 +170,7 @@ export default function Carrito() {
                   S/10.00
                                 </h5>
               </div>
-            </div>
+            </div> */}
             <div className="mb-2 ml-5 mr-5">
               <div className="d-flex justify-content-between">
                 <h5>
@@ -178,7 +178,7 @@ export default function Carrito() {
                </h5>
                 <h5>S/
                                     {
-                    (sub) ? `${(sub + 10).toFixed(1)}0` : 0
+                    (sub) ? `${(sub).toFixed(1)}0` : 0
                   }
                 </h5>
               </div>
