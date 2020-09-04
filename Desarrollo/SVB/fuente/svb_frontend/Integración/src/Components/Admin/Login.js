@@ -38,11 +38,24 @@ export default function Login() {
       const formatoJson = await res.json();
       console.log(formatoJson);
 
-      history.push('/categorias')
+      //history.push('/categorias')
       /* getCategorias();
       ModalInsertar(); */
       localStorage.setItem('token', JSON.stringify(formatoJson.token));
       localStorage.setItem('user', JSON.stringify(formu.username));
+      localStorage.setItem('is_admin', JSON.stringify(formatoJson.is_admin));
+
+      let user = JSON.parse(localStorage.getItem('user'))
+      let ad = JSON.parse(localStorage.getItem('is_admin'))
+      if (user === "admin") {
+        localStorage.setItem('is_admin', true);
+        history.push('/categorias')
+        console.log("admin", ad);
+      } else {
+
+        history.push('/')
+        console.log("admin", ad);
+      }
     } catch (error) {
       console.log(error.message);
     }

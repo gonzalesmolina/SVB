@@ -6,6 +6,7 @@ export default function NavbarPerfil() {
 const logout=()=>{
    localStorage.removeItem('user');
    localStorage.removeItem('token');
+   localStorage.removeItem('is_admin');
 
    JSON.parse(localStorage.getItem('carrito'))&&localStorage.removeItem('carrito');
    
