@@ -19,6 +19,7 @@ export default function Categoria() {
     name: '',
     description: '',
     is_active: false,
+    image : '',
     tipoModal: ''
   })
 
@@ -75,6 +76,7 @@ export default function Categoria() {
       id: el.id,
       name: el.name,
       description: el.description,
+      image: el.image,
       is_active: el.is_active,
       tipoModal: 'actualizar'
 
@@ -227,6 +229,24 @@ export default function Categoria() {
                     </div>
 
                   </div>
+                  {
+                    formu.image 
+                    ? <div className="form-row">
+                        <div className="form-group col-md-6">
+                          <label>Imágen:</label> <br/>
+                          <img src={formu.image} alt="" width="250" height="250"/>
+                        </div>
+                      </div>
+                    : <div></div>
+                  }
+
+                  <div className="form-row">
+                    <div className="form-group col-md-12">
+                      <label>Nueva Imágen:</label> <br/>
+                      <input type="file" name="image" accept="image/*" className="form-control"/>
+                    </div>
+                  </div>
+
                 </form>
               </ModalBody>
 
