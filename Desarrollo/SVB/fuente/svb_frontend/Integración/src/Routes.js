@@ -9,6 +9,7 @@ import Registro from './Components/Admin/Registro';
 import ProductoXCateg from './Components/Cliente/ProductoXCateg';
 import Carrito from './Components/Cliente/Perfil/Carrito';
 import Usuario from './Components/Cliente/Perfil/Usuario';
+import NotFound from './Components/Cliente/NotFound';
 
  const Routes=()=> {
     return (
@@ -22,6 +23,7 @@ import Usuario from './Components/Cliente/Perfil/Usuario';
            <Route exact path="/productos/:idCateg" component={ProductoXCateg} />
            <Route exact path="/cart" component={Carrito} />
            <Route exact path="/usuario" component={Usuario} />
+           <Route  component={NotFound} />
 
            
 

@@ -47,7 +47,7 @@ export default function Usuario() {
                                     <th scope="col">N° Orden</th>
                                     <th scope="col">Productos</th>
                                     <th scope="col">Estado</th>
-                                    <th scope="col">Monto (S./)</th>
+                                    <th scope="col">Monto (S/)</th>
                                     <th scope="col">Fecha</th>
                                 </tr>
                             </thead>
@@ -60,7 +60,7 @@ export default function Usuario() {
                                                 <ul className="list-unstyled">
                                                     {
                                                         el.items.map(t => (
-                                                        <li key={t.id}>x {t.quantity} {t.item.name}</li>
+                                                        <li key={t.id}>  <i>{t.quantity} uni</i> {t.item.name}</li>
                                                         ))
                                                     }
                                                 </ul>
@@ -68,8 +68,13 @@ export default function Usuario() {
                                             <td>{
                                                 el.ordered ? "Realizada" : "No realizada"
                                             }</td>
-                                            <td>{el.total_amount}</td>
-                                            <td>{el.created_at}</td>
+                                            <td><strong>{el.total_amount.toFixed(2)}</strong></td>
+                                            <td>
+                                                {new Date(el.created_at).toLocaleDateString()}
+                                                <br/>
+                                                {new Date(el.created_at).toLocaleTimeString()}
+                                                
+                                            </td>
 
                                         </tr>
 

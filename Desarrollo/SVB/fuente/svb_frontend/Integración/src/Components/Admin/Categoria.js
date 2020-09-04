@@ -153,7 +153,7 @@ export default function Categoria() {
             <table className="table table-striped  table-responsive">
               <thead className="thead-dark">
                 <tr>
-                  <th scope="col">ID</th>
+                  
                   <th scope="col">Nombre</th>
                   <th scope="col">Descripción</th>
                   {/* <th scope="col">Slug</th>  */}
@@ -166,7 +166,7 @@ export default function Categoria() {
               <tbody>
                 {categ.map((el, i) => (
                   <tr key={i}>
-                    <td >{el.id}</td>
+                    
                     <td>{el.name}</td>
                     <td>{el.description}</td>
                     {/* <td>1022323456549</td> */}

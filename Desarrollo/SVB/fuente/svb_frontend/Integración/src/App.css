@@ -91,9 +91,10 @@ color: #282c34;
 }
 .contenido{
   padding-top: 40px;
-  background: #F6F6F6;
- 
-  height: 100vh;
+  background: #fafafa;
+ height: auto;
+ padding-bottom: 1em;
+  /* min-height: 100vh; */
 }
 
 
@@ -154,4 +155,23 @@ color: #282c34;
 
 .img-prodCart{
   width:100px;
+}
+
+.notFound{
+  background-image: url("https://image.freepik.com/free-vector/error-with-glitch-effect-screen-error-404-page-found_143407-1.jpg");
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+/* background: #000;
+height: 100vh; */
+}
+
+.centrarNF{
+  display: flex;
+  justify-content: center;
+   align-items: flex-end; 
+ padding-bottom: 4em;
+  
 }
