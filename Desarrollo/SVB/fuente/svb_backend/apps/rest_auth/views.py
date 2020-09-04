@@ -35,7 +35,8 @@ def login(request):
     token, _ = Token.objects.get_or_create(user=user)
 
     return Response({
-        'token': token.key
+        'token': token.key,
+        'is_admin': user.is_staff
     })
 
 
