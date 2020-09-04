@@ -12,6 +12,23 @@ class CategorySerializer(serializers.ModelSerializer):
             'name',
             'description',
             'slug',
+            'image',
+            'is_active',
+            'created_at',
+            'modified_at',
+        )
+
+
+class CategoryListSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Category
+        fields = (
+            'id',
+            'name',
+            'description',
+            'slug',
+            'image',
             'is_active',
             'created_at',
             'modified_at',
