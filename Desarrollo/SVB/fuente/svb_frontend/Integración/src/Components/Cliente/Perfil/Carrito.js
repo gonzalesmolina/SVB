@@ -221,7 +221,7 @@ export default function Carrito() {
                 <button type="button"
                   className="btn btn-success btn-block"
                   onClick={postOrdenes}
-                >Pagar {`S/ ${(sub + 10).toFixed(1)}0`}
+                >Pagar {`S/ ${(sub).toFixed(1)}0`}
                 </button>
               </form>
           
