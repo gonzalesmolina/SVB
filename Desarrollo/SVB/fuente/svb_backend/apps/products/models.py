@@ -8,6 +8,7 @@ class Category(TimeStampedModel):
     name = models.CharField(max_length=32)
     description = models.CharField(max_length=128)
     slug = models.SlugField(blank=True, null=True)
+    image = models.ImageField(upload_to='categories/', blank=True, null=True)
     is_active = models.BooleanField(default=True)
 
     class Meta:
