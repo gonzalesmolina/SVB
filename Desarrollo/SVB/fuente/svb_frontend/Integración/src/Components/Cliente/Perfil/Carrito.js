@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import NavbarPerfil from './NavbarPerfil'
 import ProductoCart from './ProductoCart'
-import { Modal, ModalBody, ModalHeader } from 'reactstrap';
+import { Modal, ModalBody, ModalHeader,Alert } from 'reactstrap';
 import { useHistory } from "react-router-dom";
 
 
@@ -81,7 +81,7 @@ export default function Carrito() {
     
       })
       //const [orden, setOrden] = useState(...bolsa);
-    
+      const [abrir, setAbrir] = useState(false)
     
       const ModalInsertar = () => {
         setModalInsertar(!modalInsertar);
@@ -112,16 +112,22 @@ export default function Carrito() {
           console.log(formatoJson);
     
           localStorage.removeItem('carrito');
-    
-          ModalInsertar();
-          alert('Compra realiza con exito')
-          history.push('/');
+         
+          setAbrir(true)
+       //setTimeout(function(){ setAbrir(false) }, 1500);
+       //ModalInsertar();
+       //   alert('Compra realiza con exito')
+       
+         // history.push('/');
         } catch (error) {
           console.log(error.message);
         }
-    
-        ModalInsertar();
-    
+        setTimeout(function(){
+          ModalInsertar();
+          setAbrir(false);
+          history.push('/') 
+        }, 1600);
+       
       }
      
     
@@ -148,6 +154,7 @@ export default function Carrito() {
         <>
     
           <div className="detalle ">
+         
             <div className="mb-4 text-center w-100">
               <h3>RESUMEN DE PEDIDO</h3>
             </div>
@@ -191,7 +198,9 @@ export default function Carrito() {
           </div>
     
           {/* modaaaall pago */}
+         
           <Modal isOpen={modalInsertar}>
+          
             <ModalHeader style={{ display: 'block' }}>
               <strong className="modal-title">Ingresar datos del pago</strong>
               <span style={{ float: 'right', cursor: 'pointer' }} onClick={() => ModalInsertar()}
@@ -201,6 +210,9 @@ export default function Carrito() {
             </ModalHeader>
             <ModalBody>
               <form >
+              <Alert color="info" isOpen={abrir}>
+                            Compra realizada con éxito
+               </Alert>
                 <h1 className="text-center"> Pago</h1>
     
                 <div className="form-group">
@@ -227,8 +239,7 @@ export default function Carrito() {
           
     
             </ModalBody>
-    
-         
+                  
           </Modal>
         </>
       )
