@@ -198,9 +198,11 @@ export default function Carrito() {
           </div>
     
           {/* modaaaall pago */}
-         
-          <Modal isOpen={modalInsertar}>
           
+          <Modal isOpen={modalInsertar}>
+          <Alert color="info" isOpen={abrir}>
+                            Compra realizada con éxito
+               </Alert>
             <ModalHeader style={{ display: 'block' }}>
               <strong className="modal-title">Ingresar datos del pago</strong>
               <span style={{ float: 'right', cursor: 'pointer' }} onClick={() => ModalInsertar()}
@@ -210,9 +212,9 @@ export default function Carrito() {
             </ModalHeader>
             <ModalBody>
               <form >
-              <Alert color="info" isOpen={abrir}>
+              {/* <Alert color="info" isOpen={abrir}>
                             Compra realizada con éxito
-               </Alert>
+               </Alert> */}
                 <h1 className="text-center"> Pago</h1>
     
                 <div className="form-group">
