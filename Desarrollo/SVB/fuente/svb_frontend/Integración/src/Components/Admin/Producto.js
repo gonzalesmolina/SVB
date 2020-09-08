@@ -103,7 +103,7 @@ export default function Producto() {
   }
   const peticionPut = async () => {
     try {
-      const res = await fetch(url + "/" + formu.id, {
+      const res = await fetch(url + "/" + formu.id,{
         method: 'PUT',
         body: JSON.stringify(formu),
         headers: {
