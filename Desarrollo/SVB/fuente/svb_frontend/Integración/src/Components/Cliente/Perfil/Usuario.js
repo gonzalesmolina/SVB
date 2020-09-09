@@ -21,8 +21,10 @@ export default function Usuario() {
         );
         const data = await res.json();
         console.table(data.results)
+        console.log("tipo",typeof(data.results));
         setOrders(data.results); //es para el url verdadero
         // setProductos(data) //de mi api fake json server
+        console.log("ordeeers",orders);
 
     }
 
