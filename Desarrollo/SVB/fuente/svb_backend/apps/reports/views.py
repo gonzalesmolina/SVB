@@ -32,9 +32,9 @@ class SalesListView(ListAPIView):
             if begin is not None and end is None:
                 qs = qs.filter(Q(created_at__date__gte=begin))
             if end is not None and begin is None:
-                qs = qs.filter(Q(created_at__lte=end))
+                qs = qs.filter(Q(created_at__date__lte=end))
             if end is not None and begin is not None:
-                qs = qs.filter(Q(created_at__range=[begin, end]))
+                qs = qs.filter(Q(created_at__date__range=[begin, end]))
             if product:
                 qs = qs.filter(Q(order__items__item__name__icontains=product))
         total_sales = qs.aggregate(Sum('amount')).get('amount__sum')
