@@ -1,12 +1,11 @@
-import React, { useEffect, useState } from 'react';
-// import axios from 'axios';
+import React, { useEffect } from 'react';
+
 import { NavLink } from 'react-router-dom';
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./login.css";
 import { useHistory } from "react-router-dom";
-// import { Modal, ModalBody, ModalFooter, ModalHeader } from 'reactstrap';
-// import NavegacionLateral from './NavegacionLateral';
-// import NavBar from './NavBar'
+import {useFormik} from "formik";
+import * as Yup from "yup";
 
 
 
@@ -17,51 +16,42 @@ export default function Registro() {
 
   let history = useHistory();
 
-  const [formu, setFormu] = useState({
-    username: '',
-    password: '',
-    email: ''
-  })
-
-  const postRegistro = async () => {
-    try {
-
-      console.log(formu)
-
-      const res = await fetch(url, {
-        method: 'POST',
-        body: JSON.stringify(formu),
-        headers: {
-          'Accept': 'application/json',
-          'Content-type': 'application/json'
-        }
-      })
-      const formatoJson = await res.json();
-      console.log(formatoJson);
-
-      history.push('/login')
-      // setIsRedirect(true)
-      /* getCategorias();
-      ModalInsertar(); */
-    } catch (error) {
-      console.log(error.message);
+  
+  const formik = useFormik({
+    initialValues:{
+      username:"",
+      email:"",
+      password:""
+    },
+    validationSchema:Yup.object({
+      username:Yup.string().required('Ingresa un usuario'),
+      email:Yup.string().email('ingrese email válido').required('Ingresa un correo'),
+      password:Yup.string().min(8,'Mínimo 8 carácteres').required('Ingresa una contraseña')
+    }),
+    onSubmit: async (formData)=>{
+      console.log(formData);
+      try {
+  
+        console.log("posteando",formData)
+  
+        const res = await fetch(url, {
+          method: 'POST',
+          body: JSON.stringify(formData),
+          headers: {
+            'Accept': 'application/json',
+            'Content-type': 'application/json'
+          }
+        })
+        const formatoJson = await res.json();
+        console.log(formatoJson);
+  
+        history.push('/login')
+      } catch (error) {
+        console.log(error.message);
+      }
     }
-
-
-
-
-  }
-
-  const handleChange = async (e) => {
-    e.persist();
-
-    await setFormu({
-      ...formu,
-      [e.target.name]: e.target.value
-    })
-
-
-  }
+  })
+  
 
   useEffect(() => {
 
@@ -80,22 +70,37 @@ export default function Registro() {
           <div className="col-md-6 mx-auto ">
 
             <div className="container register">
-              <form >
+              <form onSubmit={formik.handleSubmit}>
                 <label className="title">Crea una cuenta</label>
                 <div className="form-group col">
                   <label >Nombre de usuario</label>
-                  <input type="text" name="username" onChange={handleChange} value={formu ? formu.username : ''} className="form-control" placeholder="Ingresa tu nombre de usuario" />
+                  <input type="text" name="username"  
+                     onChange={formik.handleChange}
+                  className="form-control" placeholder="Ingresa tu nombre de usuario" />
+                  {formik.touched.username && formik.errors.username?(
+                     <div style={{color:"red",fontSize:"14px"}}>{formik.errors.username}</div>
+                   ):null}
                 </div>
                 <div className="form-group col">
                   <label >Correo</label>
-                  <input type="email" name="email" onChange={handleChange} value={formu ? formu.email : ''} className="form-control" placeholder="Ingresa tu correo" />
+                  <input type="email" name="email" 
+                   onChange={formik.handleChange}
+                   className="form-control" placeholder="Ingresa tu correo" />
+                    {formik.touched.email && formik.errors.email?(
+                     <div style={{color:"red",fontSize:"14px"}}>{formik.errors.email}</div>
+                   ):null}
                 </div>
                 <div className="form-group col">
                   <label >Contraseña</label>
-                  <input type="password" name="password" onChange={handleChange} value={formu ? formu.password : ''} className="form-control" placeholder="Ingresa tu contraseña" />
+                  <input type="password" name="password"  
+                   onChange={formik.handleChange}
+                   className="form-control" placeholder="Ingresa tu contraseña" />
+                    {formik.touched.password && formik.errors.password?(
+                     <div style={{color:"red",fontSize:"14px"}}>{formik.errors.password}</div>
+                   ):null}
                 </div>
                 <div className="form-group col">
-                  <button type="button" onClick={() => postRegistro()} className="btn btn-success  btn-block">Registrarse</button>
+                  <button type="submit"  className="btn btn-success  btn-block">Registrarse</button>
                   <div className="form-group col">
                     <small>¿Ya tienes cuenta? ingresa
                       <NavLink to="/login"> Aqui</NavLink>
