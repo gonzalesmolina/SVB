@@ -57,9 +57,6 @@ export default function Registro() {
 
     console.log('aqui');
 
-    // getCategorias();
-
-
   }, [])
 
   return (

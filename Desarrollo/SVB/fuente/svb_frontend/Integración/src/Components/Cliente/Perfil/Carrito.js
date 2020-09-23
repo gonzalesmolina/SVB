@@ -82,6 +82,7 @@ export default function Carrito() {
       })
       //const [orden, setOrden] = useState(...bolsa);
       const [abrir, setAbrir] = useState(false)
+      
     
       const ModalInsertar = () => {
         setModalInsertar(!modalInsertar);
@@ -130,7 +131,7 @@ export default function Carrito() {
        
       }
      
-    
+      
       let sub = 0;
       bolsa && bolsa.map((el) => { sub += el.quantity * el.price; })
     
@@ -192,8 +193,9 @@ export default function Carrito() {
             </div>
             <div className="w-100 text-center">
               <button className="btn btn-lg btn-block btn-success"
-                onClick={ModalInsertar}
+                onClick={sub!==0?ModalInsertar:""}
               >Comprar</button>
+ 
             </div>
           </div>
     

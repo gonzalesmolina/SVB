@@ -72,7 +72,7 @@ color: #282c34;
   margin-right: 16px;
 }
 .registro{
-  color: grey;
+  color: rgb(87, 87, 87) !important;
   font-weight: bold;
   margin: 1em;
   cursor: pointer;
