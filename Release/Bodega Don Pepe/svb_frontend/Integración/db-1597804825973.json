@@ -1,0 +1,73 @@
+{
+  "categorias": [
+    {
+      "id": 3,
+      "name": "Frutas",
+      "description": "mandarinas, uvas, duraznos, plátanos",
+      "is_active": true,
+      "tipoModal": "actualizar"
+    },
+    {
+      "id": 4,
+      "name": "Bebidas",
+      "description": "jugos, gaseosas, energizantestes",
+      "is_active": true,
+      "tipoModal": "actualizar"
+    },
+    {
+      "id": 5,
+      "name": "Limpieza",
+      "description": "Detergentes, lejía",
+      "is_active": true,
+      "tipoModal": "actualizar"
+    },
+    {
+      "id": 6,
+      "name": "Abarrotes",
+      "description": "arroz, azúcar",
+      "is_active": true,
+      "tipoModal": "actualizar"
+    },
+    {
+      "id": 7,
+      "name": "Verduras",
+      "description": "Zapallo, zanahoria, apio, tomate",
+      "is_active": true,
+      "tipoModal": "actualizar"
+    },
+    {
+      "tipoModal": "insertar",
+      "name": "Golosinas",
+      "description": "galletas, caramelos, chupetines",
+      "is_active": true,
+      "id": 8
+    }
+  ],
+  "proveedores": [
+    {
+      "id": 1,
+      "name": "Chakra Frutas",
+      "categorie": "Frutas",
+      "ruc": "10334455339",
+      "telephone": "5436754",
+      "mobile": "910948243",
+      "direccion": " los alisos -los olivos",
+      "is_active": false,
+      "tipoModal": "actualizar"
+    },
+    {
+      "tipoModal": "insertar",
+      "name": "Favel",
+      "categorie": "Abarrotes",
+      "ruc": "104435343453",
+      "telephone": "1234567",
+      "mobile": "123456789",
+      "direccion": "Calle Plutón, Los Olivos",
+      "is_active": true,
+      "id": 3
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

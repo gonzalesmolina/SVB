@@ -1,0 +1,177 @@
+/* .App {
+   text-align: center; 
+} */
+
+/* estilos de la categoria */
+.list-group{
+  margin-top: 4em;
+  width: 160px;
+}
+
+  /* .contenedor{
+      margin: 0;
+  } */
+  form{
+      margin: 1em;
+  }
+  .row{
+      /* padding-top: 2em; */
+      padding: 2em 2em 0 2em;
+  }
+  .table{
+      margin-top: 1.5em;
+  }
+td>i{
+  cursor: pointer;
+}
+  body{
+      /* padding-bottom: 5em; */
+     height: 100vh;
+  }
+
+.home{
+  color: white !important; 
+}
+::-webkit-input-placeholder{ 
+color:rgb(195, 194, 194) !important; 
+;
+}
+::-moz-input-placeholder{ 
+color:rgb(195, 194, 194) !important;
+}
+form .title{
+font-size: 1.7em;
+}
+#loguito{
+ margin-left: 2em;
+}
+#dropDown{
+  margin-right: 3em;
+}
+form label{
+font-size: 14px;
+font-weight: 500;
+
+color: #282c34;
+}
+
+
+@media (min-width: 0) and (max-width: 768px) {
+  /* Solo se aplicarán entre los tamaños indicados */
+  .side-nav{
+    display: none;
+  }
+ 
+}
+/* fin categoria */
+
+
+
+/* Componente NavBarBodega */
+.buscador{
+  margin-right: 16px;
+}
+.registro{
+  color: rgb(87, 87, 87) !important;
+  font-weight: bold;
+  margin: 1em;
+  cursor: pointer;
+}
+.carrito{
+  cursor: pointer;
+}
+/* fin NavBarBodega */
+
+/* componente Home */
+
+.btn-product{
+  background-color: rgb(255, 64, 64) !important;
+  color:white !important;
+  font-weight: bold !important;
+}
+.contenido{
+  padding-top: 40px;
+  background: #fafafa;
+ height: auto;
+ padding-bottom: 1em;
+  /* min-height: 100vh; */
+}
+
+
+.card{
+  margin: 1.5rem;
+}
+
+
+.btn-product:hover{
+  /* color:white; */
+  background: #ff3c2e !important;
+}
+/* fin Home */
+
+/* componente Mantenimiento Producto Admin */
+#img-icon{
+  width: 50px;
+}
+
+/* Fin componente producto */
+
+/* componente navegacionLateral */
+/* a.current{
+  background: dodgerblue;
+} */
+
+/* componente nav categoria */
+.cabecera-categoria{
+  background: #cacaca;
+}
+
+.list-group{
+  width: 200px;
+}
+
+@media (min-width: 0) and (max-width: 768px) {
+  /* Solo se aplicarán entre los tamaños indicados */
+  .catergorias{
+    display: none;
+  }
+}
+
+/* Componente  card producto */
+/* .card-img-top{
+  margin:1em;
+} */
+
+/* Componente .carrito */
+
+.media, .detalle{
+  border: 1px solid #cccbcb;
+  border-radius: 8px;
+  padding: 9px 10px;
+  margin-bottom: 1em;
+}
+
+/* fin componente .carrito */
+
+.img-prodCart{
+  width:100px;
+}
+
+.notFound{
+  background-image: url("https://image.freepik.com/free-vector/error-with-glitch-effect-screen-error-404-page-found_143407-1.jpg");
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+/* background: #000;
+height: 100vh; */
+}
+
+.centrarNF{
+  display: flex;
+  justify-content: center;
+   align-items: flex-end; 
+ padding-bottom: 4em;
+  
+}
