@@ -1,6 +1,7 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom';
 import { Link } from 'react-router-dom'
+import  imga from '../bodega.png'
 
 export default function NavBar() {
 
@@ -15,7 +16,7 @@ export default function NavBar() {
  }
     return (
         <nav className="navbar  navbar-dark bg-dark pr-4">
-      <Link to="/" className="navbar-brand" id="loguito">  Bodeguita </Link>
+      <Link to="/" className="navbar-brand" id="loguito">  <img src={imga} alt="Bodega" style={{height:"80px"}}></img>  </Link>
      
         <div className="dropdown" id="dropDown">
     

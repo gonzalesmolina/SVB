@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import  imga from '../../bodega.png'
 
 export default function NavbarPerfil() {
 
@@ -15,7 +16,7 @@ const logout=()=>{
 
     return (
         <nav className="navbar  navbar-light bg-light">
-        <Link to="/" className="navbar-brand"  style={{"marginLeft": "2em"}}>Home</Link>
+        <Link to="/" className="navbar-brand"  style={{"marginLeft": "2em"}}><img src={imga} alt="Bodega" style={{height:"90px"}}></img></Link>
        
         <div className="dropdown" style={{"marginRight": "4em"}}>
           <button className="btn btn-warning dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown"

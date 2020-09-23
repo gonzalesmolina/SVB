@@ -1,11 +1,12 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import  imga from '../bodega.png'
 
 export default function NavBarBodega({ cartShop }) {
   return (
 
-    <nav className="navbar navbar-expand-lg navbar-light " >
-      <Link to="/categorias" className="navbar-brand ml-3 font-weight-bold">   BODEGA.pe </Link>
+    <nav className="navbar navbar-expand-lg  navbar-light" >
+      <Link to="/categorias" className="navbar-brand ml-3 font-weight-bold">  <img src={imga} alt="Bodega" style={{height:"90px"}}></img> </Link>
       <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span className="navbar-toggler-icon"></span>
       </button>
@@ -25,7 +26,7 @@ export default function NavBarBodega({ cartShop }) {
         <form className="form-inline  buscador">
 
           <input className="form-control mr-sm-2" type="search" placeholder="¿Qué estas buscando?" aria-label="Search" />
-          <button className="btn btn-outline-success  my-2 my-sm-0" type="submit" >Buscar</button>
+          <button className="btn btn-danger  my-2 my-sm-0" type="submit" >Buscar</button>
 
         </form>
         <div >

@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react';
 // import axios from 'axios';
-import { NavLink } from 'react-router-dom';
+import { NavLink,Link } from 'react-router-dom';
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./login.css";
 import { useHistory } from "react-router-dom";
 // import { Modal, ModalBody, ModalFooter, ModalHeader } from 'reactstrap';
 // import NavegacionLateral from './NavegacionLateral';
 // import NavBar from './NavBar'
+import  imga from '../bodega.png'
 
 
 
@@ -87,10 +88,12 @@ export default function Login() {
     <>
       <div className="container">
         <div className="row">
-
+        
           <div className="col-md-6 mx-auto ">
-
-            <div className="container register">
+         
+        <Link to="/">  <img src={imga} alt="Bodega" style={{height:"90px"}} ></img> </Link>
+            <div className="container register ">
+           
               <form>
                 <label className="title">Iniciar Sesión</label>
                 <div className="form-group col">
