@@ -1,0 +1,115 @@
+{
+  "categorias": [
+    {
+      "id": 4,
+      "name": "Bebidas",
+      "description": "jugos, gaseosas, energizantestes",
+      "is_active": true,
+      "tipoModal": "actualizar"
+    },
+    {
+      "id": 6,
+      "name": "Abarrotes",
+      "description": "arroz, azúcar",
+      "is_active": true,
+      "tipoModal": "actualizar"
+    },
+    {
+      "id": 10,
+      "name": "Frutas",
+      "description": "Frutos de estación",
+      "is_active": true,
+      "tipoModal": "actualizar"
+    },
+    {
+      "tipoModal": "insertar",
+      "name": "Golosinas",
+      "description": "galletas, caramelos, chocolates",
+      "is_active": true,
+      "id": 11
+    },
+    {
+      "tipoModal": "insertar",
+      "name": "Limpieza",
+      "description": "Productos en general de limpeza, desinfectantes",
+      "is_active": true,
+      "id": 12
+    }
+  ],
+  "proveedores": [
+    {
+      "id": 1,
+      "ruc": "10334455339",
+      "name": "Chakra Frutas",
+      "office_phone_number": "5436754",
+      "mobile_phone_number": "910948243",
+      "address": " los alisos -los olivos",
+      "category": "Frutas",
+      "is_active": true,
+      "tipoModal": "actualizar"
+    },
+    {
+      "id": 3,
+      "ruc": "123323456542",
+      "name": "Proclenex",
+      "office_phone_number": "1234567",
+      "mobile_phone_number": "123456789",
+      "address": "Corpac, San Isidro",
+      "category": "Limpieza",
+      "is_active": false,
+      "tipoModal": "actualizar"
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "name": "Arroz Costeño 1Kg",
+      "description": "Arroz blanco",
+      "price": "3.8",
+      "discount": "0.20",
+      "categorie": "Abarrotes",
+      "is_active": true,
+      "tipoModal": "actualizar"
+    },
+    {
+      "tipoModal": "insertar",
+      "name": "Palta 1Kg",
+      "description": "Palta fuerte",
+      "price": "6.0",
+      "discount": "0.1",
+      "categorie": "Frutas",
+      "is_active": true,
+      "id": 3
+    },
+    {
+      "id": 4,
+      "name": "Lejía Clorox 1L",
+      "description": "Lejía desinfectante ",
+      "price": "2.5",
+      "discount": "0.0",
+      "categorie": "Limpieza",
+      "is_active": true,
+      "tipoModal": "actualizar"
+    },
+    {
+      "tipoModal": "insertar",
+      "name": "Leche Gloria 1L bolsa",
+      "description": "Leche evaporada ",
+      "price": "4.5",
+      "discount": "0.2",
+      "categorie": "Abarrotes",
+      "is_active": true,
+      "id": 5
+    },
+    {
+      "tipoModal": "insertar",
+      "category": "10",
+      "name": "Granadilla 1uni",
+      "description": "Granadilla de estación",
+      "price": "0.50",
+      "discount": "0.0",
+      "is_active": true,
+      "id": 6
+    }
+  ]
+}
