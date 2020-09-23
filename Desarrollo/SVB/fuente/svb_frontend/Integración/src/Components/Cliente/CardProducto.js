@@ -10,7 +10,7 @@ export default function CardProducto({prod,agregar}) {
         <img src={prod.image} className="card-img-top" alt={prod.name} style={{"height": "12rem","width": "12rem"}}/>
         <div className="card-body"> 
           <h5 className="card-title">{prod.name}</h5>
-          <p className="card-text">{prod.description}o</p>
+          <p className="card-text">{prod.description}</p>
 
           <p>s/ <strong>{prod.price}</strong></p>
 

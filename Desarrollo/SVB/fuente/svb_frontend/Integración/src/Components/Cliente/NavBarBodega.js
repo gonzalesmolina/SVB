@@ -6,7 +6,7 @@ export default function NavBarBodega({ cartShop }) {
   return (
 
     <nav className="navbar navbar-expand-lg  navbar-light" >
-      <Link to="/categorias" className="navbar-brand ml-3 font-weight-bold">  <img src={imga} alt="Bodega" style={{height:"90px"}}></img> </Link>
+      <Link to="/" className="navbar-brand ml-3 font-weight-bold">  <img src={imga} alt="Bodega" style={{height:"90px"}}></img> </Link>
       <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span className="navbar-toggler-icon"></span>
       </button>
